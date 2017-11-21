@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { Provider } from 'react-redux';
+import Routes from './Routes';
+import { configureStore } from './stores';
+import './styles/index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(
+  <Provider store={configureStore}>
+    <Routes />
+  </Provider>,
+  document.getElementById('mount')
+);
