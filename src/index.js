@@ -9,5 +9,5 @@ ReactDOM.render(
   <Provider store={configureStore}>
     <Routes />
   </Provider>,
-  document.getElementById('mount')
+  document.getElementById('root')
 );
