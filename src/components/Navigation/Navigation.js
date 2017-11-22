@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Col, Row } from 'react-grid-system';
 import { Link } from 'react-router';
-import baseStyles from '_styles/index.css';
 import styles from './Navigation.css';
 import Logo from './logo.svg';
 
@@ -12,7 +11,7 @@ class Navigation extends Component {
         <Container>
           <Row>
             <Col xs={12}>
-              <object data={Logo} className={styles.logo} />
+              <object data={Logo} className={styles.logo} alt='MUN Logo'/>
               <ul className={styles.linkList}>
                 <li className={styles.linkItem}>
                   <Link to='#' className={styles.link}>
