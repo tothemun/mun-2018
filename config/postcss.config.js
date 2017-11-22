@@ -16,6 +16,7 @@ module.exports = {
         node.warn(result, 'Unknown variable ' + name)
       }
     }),
+    require('postcss-import'),
     require('postcss-math'),
     require('postcss-color-function'),
     require('postcss-flexbugs-fixes'),

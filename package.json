@@ -22,6 +22,9 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.16",
+    "@storybook/addon-links": "^3.2.16",
+    "@storybook/react": "^3.2.16",
     "autoprefixer": "7.1.6",
     "babel": "^6.23.0",
     "babel-core": "6.26.0",
@@ -46,6 +49,7 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
+    "normalize.css": "^7.0.0",
     "object-assign": "4.1.1",
     "postcss-color-function": "^4.0.1",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -72,7 +76,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "collectCoverageFrom": [
