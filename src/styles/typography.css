@@ -1,0 +1,85 @@
+html {
+  font-size: $(remBase)px;
+  color: $textColor;
+}
+
+strong {
+  font-weight: 600;
+}
+
+html {
+  font-size: $spacingSmall;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-bottom: $spacingBase;
+}
+
+h1 {
+  font-family: $headerFamily;
+  font-size: 6.854rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  line-height: resolve(162 / $remBase)rem;
+}
+
+h2 {
+  font-family: $headerFamily;
+  font-size: 4.236rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  line-height: resolve(101 / $remBase)rem;
+}
+
+h3 {
+  font-family: $bodyFamily;
+  font-size: 2.618rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: resolve(64 / $remBase)rem;
+  margin-bottom: $spacingSmall;
+}
+
+h4 {
+  font-family: $bodyFamily;
+  font-size: 1.618rem;
+  letter-spacing: 1px;
+  line-height: 2.4375rem;
+  font-weight: 400;
+  line-height: resolve(42 / $remBase)rem;
+  margin-bottom: $spacingSmall;
+}
+
+h5 {
+  font-family: $bodyFamily;
+  font-size: 0.758rem;
+  line-height: 1rem;
+  letter-spacing: 1px;
+  line-height: resolve(22 / $remBase)rem;
+  font-weight: 400;
+  margin-bottom: $spacingBase;
+}
+
+h6 {
+  font-family: $bodyFamily;
+  font-size: 0.618em;
+  letter-spacing: 1px;
+  line-height: resolve(13 / $remBase)rem;
+  font-weight: 500;
+  margin-bottom: $spacingBase;
+}
+
+p {
+  font-family: $bodyFamily;
+  font-size: 1rem;
+  line-height: resolve(28 / $remBase)rem;
+  letter-spacing: 1px;
+  margin-bottom: $spacingSmall;
+}
+
+@media (max-width: $sm) {
+  html {
+    font-width: 14px;
+  }
+}

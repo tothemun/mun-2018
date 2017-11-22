@@ -6,7 +6,7 @@ class Button extends Component {
     const { children } = this.props;
     return (
       <div className={styles.container}>
-        {children}
+        <p>{children}</p>
       </div>
     );
   }

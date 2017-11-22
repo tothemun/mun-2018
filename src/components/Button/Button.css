@@ -1,4 +1,27 @@
 .container {
-  border: 1px solid $primaryColor;
-  padding: $spacingSmall $spacingBase;
+  border: 2px solid $primaryColor;
+  padding: $spacingBase $spacingSmall;
+  text-align: center;
+  width: auto;
+  display: inline-block;
+  cursor: pointer;
+  transition: $defaultTransition all;
+
+  p {
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &:hover {
+    background-color: $primaryColor;
+    border-color: $#fff;
+
+    p {
+      color: #fff;
+    }
+  }
+
+  &:active {
+    background-color: color($primaryColor tint(15));
+  }
 }
