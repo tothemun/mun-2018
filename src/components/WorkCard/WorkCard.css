@@ -1,6 +1,45 @@
 .container {
   display: none;
   margin-bottom: $spacingMedium;
+
+  &:hover {
+    .title {
+      opacity: 1;
+    }
+
+    .image:after {
+      opacity: 0.4;
+    }
+  }
+}
+
+.title, .image:after {
+  transition: 400ms ease-in-out opacity;
+}
+
+.image {
+  &:after {
+    opacity: 0;
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+  }
+}
+
+.title {
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  left: $spacingMedium;
+  bottom: $spacingMedium;
+  color: #fff;
+  font-weight: 200;
+  transition-delay: 0.2s;
 }
 
 .loaded {
@@ -11,12 +50,12 @@
 
 @keyframes slideUpFadeIn {
   from {
-      opacity:0;
-      transform:  translateY(100px)  ;
+    opacity: 0;
+    transform: translateY(100px)  ;
   }
 
   to {
-      opacity:1;
-      transform:  translateY(0)  ;
+    opacity: 1;
+    transform: translateY(0)  ;
   }
 }

@@ -6,7 +6,7 @@ import styles from './Homepage.css';
 import baseStyles from '_styles/index.css';
 import HeaderImg from './header-img.jpg';
 import HeadLine from './headline.svg';
-import Keurig from './keurig_logo.png';
+import Keurig from './keurig_logo.svg';
 import SeventhGen from './seventh_gen_logo.png';
 import Mamava from './mamava_logo.svg';
 import HotelVT from './hotel_vt_logo.png';
