@@ -1,13 +1,13 @@
 import React from 'react'
 import { storiesOf  } from '@storybook/react';
-import BlogPostOverview from './BlogPostOverview';
+import BlogPostCard from './BlogPostCard';
 
-storiesOf('BlogPostOverview', module)
+storiesOf('BlogPostCard', module)
   .add('Normal', () => (
-    <BlogPostOverview
+    <BlogPostCard
       image='https://images.unsplash.com/photo-1500043189552-8feddf8d9f64?auto=format&fit=crop&w=1934&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D'
-      title='Test Post'
+      title='On Writing and Logs'
       author='Jonathan Blair'
-      blurb='Test test test'
+      blurb='This is an example blog post where we go into great detail about something and blow everyones mind with our insight.'
     />
   ))

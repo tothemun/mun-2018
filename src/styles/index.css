@@ -1,11 +1,10 @@
 @import 'normalize.css';
 @import './typography.css';
+@import './spacing.css';
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Graphik', Helvetica, sans-serif;
+  font-size: 20px;
 }
-
-.pt1 { padding-top: 10px; }
-.pt5 { padding-top: 100px; }

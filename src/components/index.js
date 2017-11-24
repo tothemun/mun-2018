@@ -1,13 +1,15 @@
-import BlogPostOverview from './BlogPostOverview/BlogPostOverview';
+import BlogPostCard from './BlogPostCard/BlogPostCard';
 import Button from './Button/Button';
 import HomepageSection from './HomepageSection/HomepageSection';
 import Navigation from './Navigation/Navigation';
 import ProgressiveImage from './ProgressiveImage/ProgressiveImage';
+import WorkCard from './WorkCard/WorkCard';
 
 export {
-  BlogPostOverview,
+  BlogPostCard,
   Button,
   HomepageSection,
   Navigation,
-  ProgressiveImage
+  ProgressiveImage,
+  WorkCard
 };

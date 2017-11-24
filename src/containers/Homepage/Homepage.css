@@ -4,6 +4,7 @@
   align-items: center;
   position: relative;
   justify-content: center;
+  margin-bottom: $spacingGiant;
 
   &::before {
     background-color: #C5C5C5;
