@@ -1,5 +1,6 @@
+import htmlParse from 'html-react-parser';
 import React from 'react';
-import { Row, Col } from 'react-grid-system';
+import { Col } from 'react-grid-system';
 import { Button, ProgressiveImage } from '_components';
 import baseStyles from '_styles/index.css';
 
@@ -13,7 +14,9 @@ const BlogPostCard = ({ image, title, blurb, author }) => (
         <h4 className={baseStyles.mb0}>{title}</h4>
         <h5 className={baseStyles.mb0}>By: {author}</h5>
       </div>
-      <p className={baseStyles.mb3}>{blurb}</p>
+      <div className={baseStyles.mb3}>
+        {htmlParse(blurb)}
+      </div>
       <Button>Read</Button>
     </Col>
   </div>

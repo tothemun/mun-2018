@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Container, Col, Row } from 'react-grid-system';
 import { BlogPostCard, HomepageSection, ProgressiveImage, WorkCard } from '_components';
 import styles from './Homepage.css';
@@ -10,18 +11,24 @@ import SeventhGen from './seventh_gen_logo.png';
 import Mamava from './mamava_logo.png';
 import HotelVT from './hotel_vt_logo.png';
 
-class Homepage extends Component {
-  componentDidMount() {
+import { fetchAllPosts } from '_actions/postActions';
 
+class Homepage extends Component {
+  componentWillMount() {
+    const { fetchAllPosts } = this.props;
+
+    fetchAllPosts();
   }
 
   render() {
+    const { posts } = this.props;
+
     return (
       <div className={baseStyles.pt5}>
         <div className={styles.header}>
           <div className={styles.image}>
-            <img src={HeaderImg} />
-            <object data={HeadLine} alt='Make It Matter' className={styles.headline}/>
+            <ProgressiveImage src={HeaderImg} alt='Header'/>
+            <object data={HeadLine} alt='Make It Matter' aria-label='Make It Matter' className={styles.headline}/>
           </div>
         </div>
         <Container>
@@ -69,21 +76,17 @@ class Homepage extends Component {
               </Col>
             </Row>
           </HomepageSection>
-          <HomepageSection>
-            <Row>
-              <BlogPostCard
-                image='https://images.unsplash.com/photo-1500043189552-8feddf8d9f64?auto=format&fit=crop&w=1934&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D'
-                title='On Writing and Logs'
-                author='Jonathan Blair'
-                blurb='This is an example blog post where we go into great detail about something and blow everyones mind with our insight.'
-              />
-              <BlogPostCard
-                image='https://images.unsplash.com/photo-1500043189552-8feddf8d9f64?auto=format&fit=crop&w=1934&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D'
-                title='On Writing and Logs'
-                author='Jonathan Blair'
-                blurb='This is an example blog post where we go into great detail about something and blow everyones mind with our insight.'
-              />
-            </Row>
+          <HomepageSection title='Writing' subTitle='Musing from our blog'>
+            { posts.map((post, key) => (
+              <Row key={key}>
+                <BlogPostCard
+                  image={posts[0]._embedded['wp:featuredmedia'][0].source_url}
+                  title={post.title.rendered}
+                  author='Jonathan Blair'
+                  blurb={post.excerpt.rendered}
+                />
+              </Row>
+            ))}
           </HomepageSection>
         </Container>
       </div>
@@ -91,4 +94,9 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage;
+const mapStateToProps = (state) => ({
+  posts: state.postReducer.posts,
+  media: state.mediaReducer.media
+});
+
+export default connect(mapStateToProps, { fetchAllPosts })(Homepage);
