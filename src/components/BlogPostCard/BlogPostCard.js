@@ -1,13 +1,14 @@
 import htmlParse from 'html-react-parser';
 import React from 'react';
-import { Col } from 'react-grid-system';
+import { Col, Row } from 'react-grid-system';
 import { Button, ProgressiveImage } from '_components';
 import baseStyles from '_styles/index.css';
+import styles from './BlogPostCard.css';
 
 const BlogPostCard = ({ image, title, blurb, author }) => (
-  <div className={baseStyles.mb4}>
+  <Row className={styles.container}>
     <Col xs={4}>
-      <ProgressiveImage src={image} alt='Blog Header'/>
+      <ProgressiveImage className={styles.image} src={image} alt='Blog Header'/>
     </Col>
     <Col xs={8}>
       <div className={baseStyles.mb4}>
@@ -19,7 +20,7 @@ const BlogPostCard = ({ image, title, blurb, author }) => (
       </div>
       <Button>Read</Button>
     </Col>
-  </div>
+  </Row>
 );
 
 export default BlogPostCard;

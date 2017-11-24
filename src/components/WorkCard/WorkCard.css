@@ -1,0 +1,22 @@
+.container {
+  display: none;
+  margin-bottom: $spacingMedium;
+}
+
+.loaded {
+  display: block;
+  animation: slideUpFadeIn ease 1s;
+  will-change: opacity, transform;
+}
+
+@keyframes slideUpFadeIn {
+  from {
+      opacity:0;
+      transform:  translateY(100px)  ;
+  }
+
+  to {
+      opacity:1;
+      transform:  translateY(0)  ;
+  }
+}

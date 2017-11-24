@@ -21,7 +21,7 @@ class Homepage extends Component {
   }
 
   render() {
-    const { posts } = this.props;
+    const { fetchedPosts, posts } = this.props;
 
     return (
       <div className={baseStyles.pt5}>
@@ -35,26 +35,26 @@ class Homepage extends Component {
           <HomepageSection title='Select Work' subTitle="Lorem Ipsum">
             <Row>
               <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' />
+                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
               </Col>
               <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' />
+                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
               </Col>
               <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' />
+                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
               </Col>
               <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' />
+                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
               </Col>
               <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' />
+                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
               </Col>
               <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' />
+                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
               </Col>
             </Row>
           </HomepageSection>
-          <HomepageSection title='Select Work' subTitle="Lorem Ipsum">
+          <HomepageSection title='Clients' subTitle="Lorem Ipsum">
             <Row>
               <Col xs={2}>
                 <ProgressiveImage src={Keurig} alt='Client' />
@@ -78,14 +78,13 @@ class Homepage extends Component {
           </HomepageSection>
           <HomepageSection title='Writing' subTitle='Musing from our blog'>
             { posts.map((post, key) => (
-              <Row key={key}>
-                <BlogPostCard
-                  image={posts[0]._embedded['wp:featuredmedia'][0].source_url}
-                  title={post.title.rendered}
-                  author='Jonathan Blair'
-                  blurb={post.excerpt.rendered}
-                />
-              </Row>
+              <BlogPostCard
+                image={posts[0]._embedded['wp:featuredmedia'][0].source_url}
+                title={post.title.rendered}
+                author='Jonathan Blair'
+                blurb={post.excerpt.rendered}
+                key={key}
+              />
             ))}
           </HomepageSection>
         </Container>
@@ -95,6 +94,7 @@ class Homepage extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  fetchedPosts: state.postReducer.fetched,
   posts: state.postReducer.posts,
   media: state.mediaReducer.media
 });

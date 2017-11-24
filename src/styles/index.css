@@ -8,3 +8,13 @@ body {
   font-family: 'Graphik', Helvetica, sans-serif;
   font-size: 20px;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+:global {
+  .link-more {
+    display: none;
+  }
+}

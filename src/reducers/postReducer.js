@@ -17,6 +17,7 @@ export default createReducer(initialState, {
   [SET_POSTS]: (state, payload) => ({
     ...state,
     fetching: false,
+    fetched: true,
     error: null,
     posts: payload
   }),
