@@ -4,6 +4,7 @@ module.exports = {
     require('postcss-initial')({
       reset: 'inherited'
     }),
+    require('postcss-import'),
     require('postcss-mixins')({
       mixins: require('../src/styles/mixins')
     }),

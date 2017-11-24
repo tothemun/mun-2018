@@ -4,6 +4,7 @@
   align-items: center;
   position: relative;
   justify-content: center;
+  margin-bottom: $spacingGiant;
 
   &::before {
     background-color: #C5C5C5;
@@ -34,4 +35,9 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.svnthGen {
+  position: relative;
+  top: -8px;
 }

@@ -11,20 +11,20 @@ class Navigation extends Component {
         <Container>
           <Row>
             <Col xs={12}>
-              <object data={Logo} className={styles.logo} alt='MUN Logo'/>
+              <object data={Logo} className={styles.logo} alt='MUN Logo' aria-label='Logo'/>
               <ul className={styles.linkList}>
-                <li className={styles.linkItem}>
-                  <Link to='#' className={styles.link}>
+                <li>
+                  <Link to='/' activeClassName={styles.active}>
                     Home
                   </Link>
                 </li>
-                <li className={styles.linkItem}>
-                  <Link to='#' className={styles.link}>
+                <li>
+                  <Link to='#' activeClassName={styles.active}>
                     Labs
                   </Link>
                 </li>
-                <li className={styles.linkItem}>
-                  <Link to='#' className={styles.link}>
+                <li>
+                  <Link to='#' activeClassName={styles.active}>
                     Writing
                   </Link>
                 </li>

@@ -1,4 +1,4 @@
-const baseSpacing = 8;
+const baseSpacing = 5;
 
 module.exports = {
   headerFamily: "'Graphik', sans-serif",
@@ -12,14 +12,14 @@ module.exports = {
   warningColor: '#E7CD4A',
   containerWidth: '1140px',
   gutterWidth: '15px',
-  defaultTransition: '100ms ease-in-out',
-  spacingBase: `${baseSpacing}px`,
-  spacingSmall: `${baseSpacing * 2}px`,
-  spacingMedium: `${baseSpacing * 3}px`,
-  spacingLarge: `${baseSpacing * 5}px`,
-  spacingGiant: `${baseSpacing * 8}px`,
-  spacingHuge: `${baseSpacing * 13}px`,
-  remBase: 18,
+  defaultTransition: '250ms ease-in-out',
+  spacingBase: `${baseSpacing}px`,      // 5px
+  spacingSmall: `${baseSpacing * 2}px`, // 10px
+  spacingMedium: `${baseSpacing * 4}px`,// 20px
+  spacingLarge: `${baseSpacing * 8}px`, // 40px
+  spacingGiant: `${baseSpacing * 12}px`,// 60px
+  spacingHuge: `${baseSpacing * 20}px`, // 100px
+  remBase: 20,
   xs: '0px',
   sm: '767px',
   md: '991px',

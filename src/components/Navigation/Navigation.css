@@ -3,6 +3,10 @@
   height: 50px;
   padding: 10px 0;
   box-shadow: 0px 1px 0px 0px #222;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
 }
 
 .logo {
@@ -13,22 +17,32 @@
   list-style: none;
   float: right;
   margin: 0;
-}
 
-.linkItem {
-  float: left;
-  display: block;
-  margin: 0 8px;
-  line-height: 34px;
-  position: relative;
+  li {
+    float: left;
+    display: block;
+    margin: 0 8px;
+    line-height: 34px;
+    position: relative;
 
-  &:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $textColor;
+    display: inline-block;
+    font-weight: 600;
+    font-size: resolve(13 / $remBase)rem;
+    text-transform: uppercase;
+    margin: 0;
+    position: relative;
+    top: -4px;
   }
 }
 
-.link {
-  text-decoration: none;
-  color: $textColor;
-  display: inline-block;
+.active {
+  color: red;
 }

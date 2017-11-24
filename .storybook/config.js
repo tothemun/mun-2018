@@ -1,5 +1,6 @@
 import { configure } from '@storybook/react';
 import React from 'react';
+import '_styles/index.css';
 
 configure(
   () => {
