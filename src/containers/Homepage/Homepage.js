@@ -55,7 +55,7 @@ class Homepage extends Component {
             </Row>
           </HomepageSection>
           <HomepageSection title='Clients' subTitle="Lorem Ipsum">
-            <Row>
+            <Row className={baseStyles.centerVert}>
               <Col xs={2}>
                 <ProgressiveImage src={Keurig} alt='Client' />
               </Col>
@@ -79,7 +79,7 @@ class Homepage extends Component {
           <HomepageSection title='Writing' subTitle='Musing from our blog'>
             { posts.map((post, key) => (
               <BlogPostCard
-                image={posts[0]._embedded['wp:featuredmedia'][0].source_url}
+                image={post._embedded['wp:featuredmedia'][0].source_url}
                 title={post.title.rendered}
                 author='Jonathan Blair'
                 blurb={post.excerpt.rendered}
