@@ -8,9 +8,10 @@ import HeaderImg from './header-img.jpg';
 import HeadLine from './headline.svg';
 import Keurig from './keurig_logo.png';
 import SeventhGen from './seventh_gen_logo.png';
-import Mamava from './mamava_logo.png';
+import Mamava from './mamava_logo.svg';
 import HotelVT from './hotel_vt_logo.png';
-
+import Champlain from './champlain_logo.png';
+import Wildfire from './wildfire_logo.svg';
 import { fetchAllPosts } from '_actions/postActions';
 
 class Homepage extends Component {
@@ -69,10 +70,10 @@ class Homepage extends Component {
                 <ProgressiveImage src={HotelVT} alt='Client' />
               </Col>
               <Col xs={2}>
-                <ProgressiveImage src={HeaderImg} alt='Client' />
+                <ProgressiveImage src={Champlain} alt='Client' />
               </Col>
               <Col xs={2}>
-                <ProgressiveImage src={HeaderImg} alt='Client' />
+                <ProgressiveImage src={Wildfire} alt='Client' />
               </Col>
             </Row>
           </HomepageSection>
