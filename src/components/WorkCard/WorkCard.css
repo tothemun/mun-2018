@@ -1,7 +1,8 @@
 .container {
   display: none;
   margin-bottom: $spacingMedium;
-
+  cursor: pointer;
+  
   &:hover {
     .title {
       opacity: 1;

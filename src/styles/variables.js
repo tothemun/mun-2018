@@ -12,7 +12,7 @@ module.exports = {
   warningColor: '#E7CD4A',
   containerWidth: '1140px',
   gutterWidth: '15px',
-  defaultTransition: '100ms ease-in-out',
+  defaultTransition: '250ms ease-in-out',
   spacingBase: `${baseSpacing}px`,      // 5px
   spacingSmall: `${baseSpacing * 2}px`, // 10px
   spacingMedium: `${baseSpacing * 4}px`,// 20px
