@@ -7,10 +7,10 @@ import baseStyles from '_styles/index.css';
 import HeaderImg from './header-img.jpg';
 import HeadLine from './headline.svg';
 import Keurig from './keurig_logo.svg';
-import SeventhGen from './seventh_gen_logo.png';
+import SeventhGen from './seventh_gen_logo.svg';
 import Mamava from './mamava_logo.svg';
-import HotelVT from './hotel_vt_logo.png';
-import Champlain from './champlain_logo.png';
+import HotelVT from './hotel_vt_logo.svg';
+import Champlain from './champlain_logo.svg';
 import Wildfire from './wildfire_logo.svg';
 import { fetchAllPosts } from '_actions/postActions';
 
@@ -58,22 +58,22 @@ class Homepage extends Component {
           <HomepageSection title='Clients' subTitle="Lorem Ipsum">
             <Row className={baseStyles.centerVert}>
               <Col xs={2}>
-                <ProgressiveImage src={Keurig} alt='Client' />
+                <ProgressiveImage src={Keurig} alt='Client' fit='contain'/>
               </Col>
               <Col xs={2}>
-                <ProgressiveImage src={SeventhGen} alt='Client' />
+                <ProgressiveImage src={SeventhGen} alt='Client' fit='contain' className={styles.svnthGen}/>
               </Col>
               <Col xs={2}>
-                <ProgressiveImage src={Mamava} alt='Client' />
+                <ProgressiveImage src={Mamava} alt='Client' fit='contain'/>
               </Col>
               <Col xs={2}>
-                <ProgressiveImage src={HotelVT} alt='Client' />
+                <ProgressiveImage src={HotelVT} alt='Client' style={{height: 50}} fit='contain'/>
               </Col>
               <Col xs={2}>
-                <ProgressiveImage src={Champlain} alt='Client' />
+                <ProgressiveImage src={Champlain} alt='Client' fit='contain'/>
               </Col>
               <Col xs={2}>
-                <ProgressiveImage src={Wildfire} alt='Client' />
+                <ProgressiveImage src={Wildfire} alt='Client' fit='contain'/>
               </Col>
             </Row>
           </HomepageSection>
