@@ -57,22 +57,22 @@ class Homepage extends Component {
           </HomepageSection>
           <HomepageSection title='Clients' subTitle="Lorem Ipsum">
             <Row className={baseStyles.centerVert}>
-              <Col xs={2}>
+              <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={Keurig} alt='Client' fit='contain'/>
               </Col>
-              <Col xs={2}>
+              <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={SeventhGen} alt='Client' fit='contain' className={styles.svnthGen}/>
               </Col>
-              <Col xs={2}>
+              <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={Mamava} alt='Client' fit='contain'/>
               </Col>
-              <Col xs={2}>
+              <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={HotelVT} alt='Client' style={{height: 50}} fit='contain'/>
               </Col>
-              <Col xs={2}>
+              <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={Champlain} alt='Client' fit='contain'/>
               </Col>
-              <Col xs={2}>
+              <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={Wildfire} alt='Client' fit='contain'/>
               </Col>
             </Row>
