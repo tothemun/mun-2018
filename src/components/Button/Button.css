@@ -8,6 +8,8 @@
   transition: $defaultTransition all;
   position: relative;
   background: white;
+  text-decoration: none;
+  color: $textColor;
 
   &:before {
     content: '';
@@ -30,6 +32,7 @@
   &:hover {
     background-color: $primaryColor;
     border-color: $#fff;
+    color: #fff;
 
     &:before {
       transform: translate(-$spacingBase, $spacingBase);

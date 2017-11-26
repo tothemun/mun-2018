@@ -80,10 +80,7 @@ class Homepage extends Component {
           <HomepageSection title='Writing' subTitle='Musing from our blog'>
             { posts.map((post, key) => (
               <BlogPostCard
-                image={post._embedded['wp:featuredmedia'][0].source_url}
-                title={post.title.rendered}
-                author='Jonathan Blair'
-                blurb={post.excerpt.rendered}
+                post={post}
                 key={key}
               />
             ))}

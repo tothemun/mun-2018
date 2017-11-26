@@ -11,7 +11,9 @@ class Navigation extends Component {
         <Container>
           <Row>
             <Col xs={12}>
-              <object data={Logo} className={styles.logo} alt='MUN Logo' aria-label='Logo'/>
+              <Link to='/'>
+                <object data={Logo} className={styles.logo} alt='MUN Logo' aria-label='Logo'/>
+              </Link>
               <ul className={styles.linkList}>
                 <li>
                   <Link to='/' activeClassName={styles.active}>

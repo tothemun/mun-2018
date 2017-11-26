@@ -3,11 +3,11 @@ import styles from './Button.css';
 
 class Button extends Component {
   render() {
-    const { children } = this.props;
+    const { children, to } = this.props;
     return (
-      <div className={styles.container}>
+      <a className={styles.container} href={to}>
         <p>{children}</p>
-      </div>
+      </a>
     );
   }
 }
