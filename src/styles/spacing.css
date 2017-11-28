@@ -28,6 +28,7 @@
 .mb3 { margin-bottom: $spacingMedium; }
 .mb4 { margin-bottom: $spacingLarge; }
 .mb5 { margin-bottom: $spacingGiant; }
+.mb6 { margin-bottom: $spacingHuge; }
 
 .pt0 { padding-top: 0; }
 .pt1 { padding-top: $spacingBase; }

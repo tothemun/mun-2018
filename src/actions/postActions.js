@@ -11,17 +11,17 @@ import {
 import { fetchFeaturedMedia } from './mediaActions';
 
 function getPosts(query = { _embed: true }) {
-  return axios.get(`${URL_BASE}/posts`, qs.stringify(query));
+  return axios.get(`${URL_BASE}/posts?${qs.stringify(query)}`);
 }
 
 function getPost(id, query = { _embed: true }) {
-  return axios.get(`${URL_BASE}/posts/${id}`, qs.stringify(query));
+  return axios.get(`${URL_BASE}/posts/${id}?${qs.stringify(query)}`);
 }
 
-export function fetchAllPosts(categoriesExclude) {
+export function fetchAllPosts(query = { embed: true}) {
   return dispatch => {
     dispatch({ type: SET_POSTS_FETCHING });
-    return axios.get(`${URL_BASE}/posts?_embed=true`)
+    return getPosts()
       .then(res => {
         const { data } = res;
 

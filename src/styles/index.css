@@ -19,6 +19,19 @@ body {
   align-items: center;
 }
 
+.inline {
+  * {
+    display: inline-block;
+  }
+}
+
+.faded {
+  color: $lightGray;
+}
+.patternHash {
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQYV2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEjpMcPgAAAABJRU5ErkJggg==);
+}
+
 :global {
   .link-more {
     display: none;

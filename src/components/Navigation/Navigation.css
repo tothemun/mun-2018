@@ -10,7 +10,12 @@
 }
 
 .logo {
-  height: 100%;
+  height: 30px;
+  display: block;
+}
+
+.logoLink {
+  float: left;
 }
 
 .linkList {
