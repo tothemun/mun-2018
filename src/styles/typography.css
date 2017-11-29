@@ -74,3 +74,7 @@ p {
   letter-spacing: 1px;
   margin-bottom: $spacingMedium;
 }
+
+blockquote {
+  padding-left: $spacingHuge;
+}
