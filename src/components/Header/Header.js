@@ -12,5 +12,4 @@ Header.defaultProps = {
   alt: 'Header'
 };
 
-
 export default Header;

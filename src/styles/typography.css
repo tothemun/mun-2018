@@ -76,5 +76,19 @@ p {
 }
 
 blockquote {
-  padding-left: $spacingHuge;
+  margin-left: $spacingHuge;
+  font-weight: 600;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: $primaryColor;
+    position: absolute;
+    left: -100%;
+    right: 100%;
+    top: 11px;
+    margin-right: $spacingSmall;
+  }
 }

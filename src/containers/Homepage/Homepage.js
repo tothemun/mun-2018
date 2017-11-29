@@ -1,6 +1,8 @@
+import { TweenMax } from "gsap";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Col, Row } from 'react-grid-system';
+import GSAP from 'react-gsap-enhancer';
 import {
   BlogPostCard,
   HomepageSection,
@@ -24,6 +26,14 @@ class Homepage extends Component {
     const { fetchAllPosts } = this.props;
 
     fetchAllPosts();
+  }
+
+  componentDidMount() {
+    this.controller = this.addAnimation(this.moveAnimation);
+  }
+
+  moveAnimation(utils) {
+    return TweenMax.to(utils.target, 1, {y: '-=40'});
   }
 
   render() {
@@ -102,4 +112,4 @@ const mapStateToProps = (state) => ({
   media: state.mediaReducer.media
 });
 
-export default connect(mapStateToProps, { fetchAllPosts })(Homepage);
+export default connect(mapStateToProps, { fetchAllPosts })(GSAP()(Homepage));
