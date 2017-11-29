@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Col, Row } from 'react-grid-system';
-import { BlogPostCard, HomepageSection, ProgressiveImage, WorkCard } from '_components';
+import {
+  BlogPostCard,
+  HomepageSection,
+  ProgressiveImage,
+  WorkCard
+} from '_components';
 import styles from './Homepage.css';
 import baseStyles from '_styles/index.css';
 import HeaderImg from './header-img.jpg';
@@ -33,7 +38,7 @@ class Homepage extends Component {
           </div>
         </div>
         <Container>
-          <HomepageSection title='Select Work' subTitle="Lorem Ipsum">
+          <HomepageSection title='Select Work'>
             <Row>
               <Col xs={6}>
                 <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
@@ -55,7 +60,7 @@ class Homepage extends Component {
               </Col>
             </Row>
           </HomepageSection>
-          <HomepageSection title='Clients' subTitle="Lorem Ipsum">
+          <HomepageSection title='Clients'>
             <Row className={baseStyles.centerVert}>
               <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={Keurig} alt='Client' fit='contain'/>
@@ -77,13 +82,10 @@ class Homepage extends Component {
               </Col>
             </Row>
           </HomepageSection>
-          <HomepageSection title='Writing' subTitle='Musing from our blog'>
+          <HomepageSection title='Writing'>
             { posts.map((post, key) => (
               <BlogPostCard
-                image={post._embedded['wp:featuredmedia'][0].source_url}
-                title={post.title.rendered}
-                author='Jonathan Blair'
-                blurb={post.excerpt.rendered}
+                post={post}
                 key={key}
               />
             ))}

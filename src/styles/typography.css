@@ -26,6 +26,7 @@ h2 {
   font-weight: 900;
   letter-spacing: 3px;
   line-height: resolve(50 / $remBase)rem;
+  margin-bottom: $spacingMedium;
 }
 
 h3 {
@@ -71,5 +72,23 @@ p {
   font-size: 1rem;
   line-height: resolve(28 / $remBase)rem;
   letter-spacing: 1px;
-  margin-bottom: $spacingSmall;
+  margin-bottom: $spacingMedium;
+}
+
+blockquote {
+  margin-left: $spacingHuge;
+  font-weight: 600;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: $primaryColor;
+    position: absolute;
+    left: -100%;
+    right: 100%;
+    top: 11px;
+    margin-right: $spacingSmall;
+  }
 }
