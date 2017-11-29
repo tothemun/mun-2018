@@ -6,6 +6,7 @@ import HomepageSection from './HomepageSection/HomepageSection';
 import Navigation from './Navigation/Navigation';
 import ProgressiveImage from './ProgressiveImage/ProgressiveImage';
 import WorkCard from './WorkCard/WorkCard';
+import HoverElement from './HoverElement/HoverElement';
 
 export {
   Authors,
@@ -15,5 +16,6 @@ export {
   HomepageSection,
   Navigation,
   ProgressiveImage,
+  HoverElement,
   WorkCard
 };
