@@ -22,7 +22,7 @@ class BlogPost extends Component {
   render() {
     const { post, postFetched } = this.props;
 
-    if(!postFetched) {
+    if(!postFetched || !post) {
       return null;
     }
 
