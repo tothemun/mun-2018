@@ -18,10 +18,10 @@ function getPost(id, query = { _embed: true }) {
   return axios.get(`${URL_BASE}/posts/${id}?${qs.stringify(query)}`);
 }
 
-export function fetchAllPosts(query = { embed: true}) {
+export function fetchAllPosts(query = { _embed: true}) {
   return dispatch => {
     dispatch({ type: SET_POSTS_FETCHING });
-    return getPosts()
+    return getPosts(query)
       .then(res => {
         const { data } = res;
 

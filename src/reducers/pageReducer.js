@@ -1,44 +1,44 @@
 import {
-  CLEAR_ACTIVE_POST,
-  SET_ACTIVE_POST,
-  SET_POSTS,
-  SET_POSTS_FETCHING,
-  POSTS_ERROR
-} from '../actions/types';
+  CLEAR_ACTIVE_PAGE,
+  PAGES_ERROR,
+  SET_ACTIVE_PAGE,
+  SET_PAGES_FETCHING,
+  SET_PAGES
+} from '_actions/types';
 import { createReducer } from '_utils';
 
 const initialState = {
-  activePost: null,
+  activePage: null,
   error: null,
   fetched: false,
   fetching: false,
-  posts: []
+  pages: []
 };
 
 export default createReducer(initialState, {
-  [CLEAR_ACTIVE_POST]: (state) => ({
+  [CLEAR_ACTIVE_PAGE]: (state) => ({
     ...state,
-    activePost: null
+    activePage: null
   }),
-  [SET_ACTIVE_POST]: (state, payload) => ({
+  [SET_ACTIVE_PAGE]: (state, payload) => ({
     ...state,
-    activePost: payload,
+    activePage: payload,
     fetching: false,
     fetched: true,
     error: null
   }),
-  [SET_POSTS]: (state, payload) => ({
+  [SET_PAGES]: (state, payload) => ({
     ...state,
     fetching: false,
     fetched: true,
     error: null,
-    posts: payload
+    pages: payload
   }),
-  [SET_POSTS_FETCHING]: (state) => ({
+  [SET_PAGES_FETCHING]: (state) => ({
     ...state,
     fetching: true
   }),
-  [POSTS_ERROR]: (state, payload) => ({
+  [PAGES_ERROR]: (state, payload) => ({
     ...state,
     fetching: false,
     error: payload

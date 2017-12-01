@@ -27,13 +27,3 @@ export function fetchMedia(id) {
       });
   }
 }
-
-export function fetchFeaturedMedia(posts) {
-  return dispatch => {
-    dispatch({ type: SET_MEDIA_FETCHING });
-    return Promise.all(posts.map(post => getMedia(post.featured_media)))
-      .then(res => {
-        console.log(res);
-      })
-  }
-}

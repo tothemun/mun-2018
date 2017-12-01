@@ -17,17 +17,19 @@ import Mamava from './mamava_logo.svg';
 import HotelVT from './hotel_vt_logo.svg';
 import Champlain from './champlain_logo.svg';
 import Wildfire from './wildfire_logo.svg';
+import { fetchAllPages } from '_actions/pageActions';
 import { fetchAllPosts } from '_actions/postActions';
 
 class Homepage extends Component {
   componentWillMount() {
-    const { fetchAllPosts } = this.props;
+    const { fetchAllPages, fetchAllPosts } = this.props;
 
+    fetchAllPages();
     fetchAllPosts();
   }
 
   render() {
-    const { fetchedPosts, posts } = this.props;
+    const { fetchedPosts, fetchedPages, pages, posts } = this.props;
 
     return (
       <div className={baseStyles.pt5}>
@@ -40,24 +42,11 @@ class Homepage extends Component {
         <Container>
           <HomepageSection title='Select Work'>
             <Row>
-              <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
-              </Col>
-              <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
-              </Col>
-              <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
-              </Col>
-              <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
-              </Col>
-              <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
-              </Col>
-              <Col xs={6}>
-                <WorkCard imgSrc={HeaderImg} title='Work Example' loaded={fetchedPosts}/>
-              </Col>
+              { pages.map((page, key) => (
+                <Col xs={6} key={key}>
+                  <WorkCard page={page} loaded={fetchedPages}/>
+                </Col>
+              ))}
             </Row>
           </HomepageSection>
           <HomepageSection title='Clients'>
@@ -98,8 +87,13 @@ class Homepage extends Component {
 
 const mapStateToProps = (state) => ({
   fetchedPosts: state.postReducer.fetched,
+  fetchedPages: state.pageReducer.fetched,
+  pages: state.pageReducer.pages,
   posts: state.postReducer.posts,
-  media: state.mediaReducer.media
+  workPosts: state.postReducer.posts
 });
 
-export default connect(mapStateToProps, { fetchAllPosts })(Homepage);
+export default connect(mapStateToProps, {
+  fetchAllPages,
+  fetchAllPosts
+})(Homepage);
