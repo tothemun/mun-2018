@@ -8,7 +8,6 @@ import {
   SET_POSTS_FETCHING,
   SET_POSTS
 } from './types';
-import { fetchFeaturedMedia } from './mediaActions';
 
 function getPosts(query = { _embed: true }) {
   return axios.get(`${URL_BASE}/posts?${qs.stringify(query)}`);

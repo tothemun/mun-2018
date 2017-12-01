@@ -76,6 +76,7 @@ class Homepage extends Component {
               <BlogPostCard
                 post={post}
                 key={key}
+                loaded={fetchedPosts}
               />
             ))}
           </HomepageSection>

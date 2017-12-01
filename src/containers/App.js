@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import baseStyles from '_styles/index.css';
-import { Navigation } from '_components';
+import { Footer, Navigation } from '_components';
 
 class App extends Component {
   render() {
@@ -10,6 +10,7 @@ class App extends Component {
         <div className={baseStyles.container}>
           {this.props.children}
         </div>
+        <Footer />
       </div>
     );
   }
