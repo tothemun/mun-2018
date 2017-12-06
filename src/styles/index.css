@@ -39,6 +39,10 @@ body {
   }
 }
 
+.pullRight {
+  float: right;
+}
+
 .patternHash {
   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQYV2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEjpMcPgAAAABJRU5ErkJggg==);
 }

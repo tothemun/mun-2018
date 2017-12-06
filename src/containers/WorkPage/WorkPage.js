@@ -1,38 +1,38 @@
 import cn from 'classnames';
-import htmlParse from 'html-react-parser';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Col, Row } from 'react-grid-system';
-import { clearActivePost, fetchPost } from '_actions/postActions';
-import { Authors, Header, ProgressiveImage, WPContent } from '_components';
+import { Col, Container, Row } from 'react-grid-system';
+import { clearActivePage, fetchPage } from '_actions/pageActions';
+import { Authors, Header, WPContent } from '_components';
 import baseStyles from '_styles/index.css';
-import styles from './BlogPost.css';
+import styles from './WorkPage.css';
 
-class BlogPost extends Component {
+class WorkPage extends Component {
   componentWillMount() {
-    const { fetchPost, params } = this.props;
+    const { fetchPage, params } = this.props;
 
-    fetchPost(params.id);
+    fetchPage(params.id);
   }
 
+
   componentWillUnmount() {
-    this.props.clearActivePost();
+    this.props.clearActivePage();
   }
 
   render() {
-    const { post, postFetched } = this.props;
+    const { page } = this.props;
 
-    if(!postFetched || !post) {
+    if(!page) {
       return null;
     }
 
     return (
       <div className={baseStyles.pt4}>
-        <Header src={post._embedded['wp:featuredmedia'][0].source_url} />
+        <Header src={page._embedded['wp:featuredmedia'][0].source_url} />
         <Container className={styles.content}>
           <Row>
             <Col xs={12}>
-              <h1 className={styles.title}>{post.title.rendered}</h1>
+              <h1 className={styles.title}>{page.title.rendered}</h1>
             </Col>
           </Row>
           <Row className={baseStyles.mb4}>
@@ -40,7 +40,7 @@ class BlogPost extends Component {
               <span className={cn(styles.block, baseStyles.patternHash)} />
             </Col>
             <Col xs={10}>
-              <Authors authors={post._embedded.author} textClass={baseStyles.faded} />
+              <Authors authors={page._embedded.author} textClass={baseStyles.faded} />
             </Col>
             <Col xs={12}>
               <hr className={baseStyles.mt0}/>
@@ -48,7 +48,7 @@ class BlogPost extends Component {
           </Row>
           <Row>
             <Col xs={12} lg={8}>
-              <WPContent content={post.content.rendered} />
+              <WPContent content={page.content.rendered} />
             </Col>
           </Row>
         </Container>
@@ -58,11 +58,11 @@ class BlogPost extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  post: state.postReducer.activePost,
-  postFetched: state.postReducer.fetched
+  page: state.pageReducer.activePage,
+  pageError: state.pageReducer.error
 });
 
 export default connect(mapStateToProps, {
-  clearActivePost,
-  fetchPost
-})(BlogPost);
+  clearActivePage,
+  fetchPage
+})(WorkPage);

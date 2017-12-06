@@ -1,11 +1,12 @@
 import cn from 'classnames';
 import React from 'react';
+import { Link } from 'react-router';
 import styles from './HoverElement.css';
 
-const HoverElement = ({children, className}) => (
-  <div className={cn(styles.container, className)}>
+const HoverElement = ({ children, className, to }) => (
+  <Link className={cn(styles.container, className)} to={to}>
     {children}
-  </div>
+  </Link>
 );
 
 export default HoverElement;

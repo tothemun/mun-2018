@@ -12,7 +12,7 @@ class Navigation extends Component {
           <Row>
             <Col xs={12}>
               <Link to='/' className={styles.logoLink}>
-                <object data={Logo} className={styles.logo} alt='MUN Logo' aria-label='Logo'/>
+                <img src={Logo} className={styles.logo} alt='Logo'/>
               </Link>
               <ul className={styles.linkList}>
                 <li>

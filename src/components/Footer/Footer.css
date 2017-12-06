@@ -16,10 +16,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  padding: $spacingSmall;
+  padding: $spacingMedium;
 }
 
 .logo {
   width: 100%;
   margin-bottom: $spacingMedium;
+}
+
+.social {
+  width: $spacingMedium;
+  display: block;
 }

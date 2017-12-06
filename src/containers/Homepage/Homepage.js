@@ -10,7 +10,7 @@ import {
 import styles from './Homepage.css';
 import baseStyles from '_styles/index.css';
 import HeaderImg from './header-img.jpg';
-import HeadLine from './headline.svg';
+import Headline from './headline.svg';
 import Keurig from './keurig_logo.svg';
 import SeventhGen from './seventh_gen_logo.svg';
 import Mamava from './mamava_logo.svg';
@@ -36,7 +36,7 @@ class Homepage extends Component {
         <div className={styles.header}>
           <div className={styles.image}>
             <ProgressiveImage src={HeaderImg} alt='Header'/>
-            <object data={HeadLine} alt='Make It Matter' aria-label='Make It Matter' className={styles.headline}/>
+            <object data={Headline} alt='Make It Matter' aria-label='Make It Matter' className={styles.headline}/>
           </div>
         </div>
         <Container>
