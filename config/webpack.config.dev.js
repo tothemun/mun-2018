@@ -142,6 +142,16 @@ module.exports = {
               name: 'static/media/[name].[hash:8].[ext]',
             },
           },
+          // Inline SVG's so we can easily apply style
+          // changes on them (for hover states and such).
+          // {
+          //   test: /\.svg$/,
+          //   exclude: /node_modules/,
+          //   loader: require.resolve('svg-react-loader'),
+          //   options: {
+          //     xmlnsTest: /^xmlns.*$/
+          //   }
+          // },
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
@@ -181,12 +191,12 @@ module.exports = {
               },
             ],
           },
-          // "file" loader makes sure those assets get served by WebpackDevServer.
-          // When you `import` an asset, you get its (virtual) filename.
-          // In production, they would get copied to the `build` folder.
-          // This loader doesn't use a "test" so it will catch all modules
-          // that fall through the other loaders.
           {
+            // "file" loader makes sure those assets get served by WebpackDevServer.
+            // When you `import` an asset, you get its (virtual) filename.
+            // In production, they would get copied to the `build` folder.
+            // This loader doesn't use a "test" so it will catch all modules
+            // that fall through the other loaders.
             // Exclude `js` files to keep "css" loader working as it injects
             // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed

@@ -3,7 +3,8 @@ import { Router, Route, IndexRoute } from 'react-router';
 import {
   App,
   BlogPost,
-  Homepage
+  Homepage,
+  WorkPage
 } from './containers';
 import { history } from './stores';
 
@@ -14,6 +15,7 @@ class Routes extends Component {
         <Route path='/' component={App}>
           <IndexRoute component={Homepage} />
           <Route path='/post/:id' component={BlogPost} />
+          <Route path='/page/:id' component={WorkPage} />
         </Route>
       </Router>
     );

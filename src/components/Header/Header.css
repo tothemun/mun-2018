@@ -1,4 +1,4 @@
-.container {
+/*.container {
   width: 100%;
   display: flex;
   align-items: center;
@@ -15,7 +15,14 @@
     height: calc(100% - 120px);
     z-index: -1;
   }
+}*/
+
+.container {
+  height: 540px;
+  width: 80%;
+  margin: 0 auto;
 }
+
 
 .image {
   width: 80%;

@@ -1,0 +1,22 @@
+.header {
+  height: 540px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.content {
+  position: relative;
+  top: -250px;
+  left: -10px;
+}
+
+.title {
+  text-transform: uppercase;
+  text-shadow: 3px 4px 0 #fff;
+}
+
+.block {
+  display: block;
+  width: 100%;
+  height: 29px;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="13px" viewBox="0 0 20 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>divider_logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2018---Home" transform="translate(-710.000000, -3104.000000)" fill="#4A4A4A">
+            <g id="divider_logo" transform="translate(710.000000, 3104.000000)">
+                <polygon id="Fill-1" points="0 13 5 13 5 0 0 0"></polygon>
+                <polygon id="Fill-2" points="7.5 13 12.5 13 12.5 0 7.5 0"></polygon>
+                <path d="M20,2.5882119 L20,12.9824213 C20,12.9927617 19.9930098,13 19.9830238,13 L15.0179748,13 C15.0079888,13 15,12.9927617 15,12.9824213 L15,0.0175787464 C15,0.00723830735 15.0079888,0 15.0179748,0 L17.5004993,0 C18.8815658,0 20,1.15812918 20,2.5882119 Z" id="Fill-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>
