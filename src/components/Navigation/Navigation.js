@@ -26,7 +26,7 @@ class Navigation extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to='#' activeClassName={styles.active}>
+                  <Link to='/posts' activeClassName={styles.active}>
                     Writing
                   </Link>
                 </li>
