@@ -2,6 +2,7 @@ import htmlParse from 'html-react-parser';
 import React from 'react';
 import { Col, Row } from 'react-grid-system';
 import { Link } from 'react-router';
+import PropTypes from 'prop-types';
 import { Authors, Button, ProgressiveImage } from '_components';
 import baseStyles from '_styles/index.css';
 import styles from './BlogPostCard.css';
@@ -38,6 +39,11 @@ const BlogPostCard = ({ loaded, post }) => {
       </Col>
     </Row>
   );
+};
+
+BlogPostCard.propTypes = {
+  loaded: PropTypes.bool.isRequired,
+  post: PropTypes.object.isRequired
 };
 
 export default BlogPostCard;
