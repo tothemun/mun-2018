@@ -47,3 +47,9 @@
     background-color: color($primaryColor tint(15));
   }
 }
+
+@media(max-width: $sm) {
+  .container {
+    display: block;
+  }
+}

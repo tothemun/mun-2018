@@ -14,7 +14,7 @@ const BlogPostCard = ({ loaded, post }) => {
 
   return (
     <Row className={styles.container}>
-      <Col xs={4}>
+      <Col sm={12} md={4}>
         <Link to={`/post/${post.id}`}>
           <ProgressiveImage
             className={styles.image}
@@ -23,7 +23,7 @@ const BlogPostCard = ({ loaded, post }) => {
           />
         </Link>
       </Col>
-      <Col xs={8}>
+      <Col sm={12} md={8}>
         <div className={baseStyles.mb4}>
           <Link to={`/post/${post.id}`} className={baseStyles.undecorated}>
             <h4 className={baseStyles.mb0}>
