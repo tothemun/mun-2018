@@ -24,7 +24,7 @@ export function fetchAllPosts(query = { _embed: true }) {
     return getPosts(query)
       .then(res => {
         const { data, headers } = res;
-        console.log(headers)
+        
         dispatch({
           type: SET_POSTS,
           payload: data
