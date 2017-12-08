@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { parse } from 'qs';
 import { fetchAllPosts } from '_actions/postActions';
-import { Button, BlogPostCard, PaginationButtons } from '_components';
+import { BlogPostCard, PaginationButtons } from '_components';
 import { Col, Container, Row } from 'react-grid-system';
 import baseStyles from '_styles/index.css';
 
 class BlogRoll extends Component {
   componentWillMount() {
-    const { fetchAllPosts, location, totalPages, params } = this.props;
+    const { fetchAllPosts, location } = this.props;
     const query = parse(location.search.substr(1));
 
     const page = query.page || 1;
@@ -17,8 +17,7 @@ class BlogRoll extends Component {
   }
 
   fetchPageOfPosts = (page) => {
-    const { fetchAllPosts, location, totalPages, params } = this.props;
-    const { currentPage } = this.state;
+    const { fetchAllPosts, totalPages } = this.props;
 
     if(page <= totalPages && page >= 1) {
       fetchAllPosts({ _embed: true, page: page, per_page: 1});
@@ -27,10 +26,10 @@ class BlogRoll extends Component {
   }
 
   render() {
-    const { totalPages, posts, postsFetching } = this.props;
+    const { totalPages, posts, postsFetched, postsFetching } = this.props;
     const { currentPage } = this.state;
 
-    if(postsFetching || !posts) {
+    if(!postsFetched || !posts) {
       return null;
     }
 
@@ -60,6 +59,7 @@ class BlogRoll extends Component {
 const mapStateToProps = (state) => ({
   totalPages: state.postReducer.pages,
   posts: state.postReducer.posts,
+  postsFetched: state.postReducer.fetched,
   postsFetching: state.postReducer.fetching
 });
 

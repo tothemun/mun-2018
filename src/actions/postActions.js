@@ -24,15 +24,16 @@ export function fetchAllPosts(query = { _embed: true }) {
     return getPosts(query)
       .then(res => {
         const { data, headers } = res;
-        
-        dispatch({
-          type: SET_POSTS,
-          payload: data
-        });
 
         dispatch({
           type: SET_POST_PAGES,
-          payload: parseInt(headers['x-wp-totalpages'])
+          // The header is a string, so we parse to integer. 10 is the radix (decimal).
+          payload: parseInt(headers['x-wp-totalpages'], 10)
+        });
+
+        dispatch({
+          type: SET_POSTS,
+          payload: data
         });
 
         return data;
