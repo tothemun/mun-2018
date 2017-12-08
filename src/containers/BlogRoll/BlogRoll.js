@@ -39,11 +39,15 @@ class BlogRoll extends Component {
         { !postsFetching && posts.map((post, key) => (
           <BlogPostCard key={key} post={post} loaded={!postsFetching} />
         ))}
-        <PaginationButtons
-          totalPages={totalPages}
-          handleClick={this.fetchPageOfPosts}
-          currentPage={currentPage}
-        />
+        <Row>
+          <Col xs={12}>
+            <PaginationButtons
+              totalPages={totalPages}
+              handleClick={this.fetchPageOfPosts}
+              currentPage={currentPage}
+            />
+          </Col>
+        </Row>
       </Container>
     );
   }
