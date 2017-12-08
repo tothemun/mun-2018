@@ -5,6 +5,7 @@ import {
   CLEAR_ACTIVE_POST,
   POSTS_ERROR,
   SET_ACTIVE_POST,
+  SET_POST_PAGES,
   SET_POSTS_FETCHING,
   SET_POSTS
 } from './types';
@@ -17,12 +18,18 @@ function getPost(id, query = { _embed: true }) {
   return axios.get(`${URL_BASE}/posts/${id}?${qs.stringify(query)}`);
 }
 
-export function fetchAllPosts(query = { _embed: true}) {
+export function fetchAllPosts(query = { _embed: true }) {
   return dispatch => {
     dispatch({ type: SET_POSTS_FETCHING });
     return getPosts(query)
       .then(res => {
-        const { data } = res;
+        const { data, headers } = res;
+
+        dispatch({
+          type: SET_POST_PAGES,
+          // The header is a string, so we parse to integer. 10 is the radix (decimal).
+          payload: parseInt(headers['x-wp-totalpages'], 10)
+        });
 
         dispatch({
           type: SET_POSTS,

@@ -6,6 +6,7 @@ import Header from './Header/Header';
 import HomepageSection from './HomepageSection/HomepageSection';
 import HoverElement from './HoverElement/HoverElement';
 import Navigation from './Navigation/Navigation';
+import PaginationButtons from './PaginationButtons/PaginationButtons';
 import ProgressiveImage from './ProgressiveImage/ProgressiveImage';
 import WorkCard from './WorkCard/WorkCard';
 import WPContent from './WPContent/WPContent';
@@ -19,6 +20,7 @@ export {
   HomepageSection,
   HoverElement,
   Navigation,
+  PaginationButtons,
   ProgressiveImage,
   WorkCard,
   WPContent

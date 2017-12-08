@@ -11,6 +11,7 @@ export const POSTS_ERROR = 'POSTS_ERROR';
 export const SET_ACTIVE_POST = 'SET_ACTIVE_POST';
 export const SET_POSTS = 'SET_POSTS';
 export const SET_POSTS_FETCHING = 'SET_POSTS_FETCHING';
+export const SET_POST_PAGES = 'SET_POST_PAGES';
 
 // Media Actions
 export const ADD_MEDIA = 'ADD_MEDIA';

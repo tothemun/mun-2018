@@ -10,7 +10,7 @@ const Footer = (props) => (
   <footer className={styles.container}>
     <div className={styles.divider}>
       <hr />
-      <object data={DividerLogo} alt='MUN Divider' className={styles.dividerLogo}/>
+      <object data={DividerLogo} alt='divider' className={styles.dividerLogo} aria-label='divider'/>
     </div>
     <Container>
       <Row>

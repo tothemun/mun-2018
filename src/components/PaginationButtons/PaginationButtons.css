@@ -1,0 +1,44 @@
+.button {
+  background-color: #fff;
+  color: $textColor;
+  display: inline-block;
+  padding: $spacingBase;
+  border: 1px solid $lightGray;
+  cursor: pointer;
+  min-width: 27px;
+  border-radius: 0;
+
+  &:hover {
+    background-color: $primaryColor;
+    border-color: $#fff;
+    color: #fff;
+
+    &:before {
+      transform: translate(-$spacingBase, $spacingBase);
+    }
+
+    h5 {
+      color: #fff;
+    }
+  }
+
+  &:active {
+    background-color: color($primaryColor tint(15));
+  }
+
+  &:disabled {
+    background-color: $lightestGray;
+    color: #fff;
+  }
+
+  h5 {
+    margin: 0;
+    line-height: 0.758rem;
+  }
+}
+
+.active {
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+  color: #fff;
+}

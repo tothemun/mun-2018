@@ -1,6 +1,7 @@
 import {
   CLEAR_ACTIVE_POST,
   SET_ACTIVE_POST,
+  SET_POST_PAGES,
   SET_POSTS,
   SET_POSTS_FETCHING,
   POSTS_ERROR
@@ -12,7 +13,8 @@ const initialState = {
   error: null,
   fetched: false,
   fetching: false,
-  posts: []
+  posts: [],
+  pages: null
 };
 
 export default createReducer(initialState, {
@@ -26,6 +28,10 @@ export default createReducer(initialState, {
     fetching: false,
     fetched: true,
     error: null
+  }),
+  [SET_POST_PAGES]: (state, payload) => ({
+    ...state,
+    pages: payload
   }),
   [SET_POSTS]: (state, payload) => ({
     ...state,

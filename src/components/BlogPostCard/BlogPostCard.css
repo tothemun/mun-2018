@@ -9,3 +9,14 @@
   display: flex;
   margin-bottom: $spacingLarge;
 }
+
+@media(max-width: $sm) {
+  .container {
+    flex-direction: column;
+  }
+
+  .image {
+    position: relative;
+    margin-bottom: $spacingSmall;
+  }
+}
