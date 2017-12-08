@@ -3,10 +3,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './PaginationButtons.css';
 
-const PaginationButtons = ({ currentPage, handleClick, handleNext, handlePrevious, totalPages}) => (
+const PaginationButtons = ({ currentPage, handleClick, totalPages}) => (
   <div>
-    <button className={styles.button} onClick={handlePrevious} disabled={currentPage === 1}>
-      <h5>Previous</h5>
+    <button
+      className={styles.button}
+      disabled={currentPage === 1}
+      onClick={() => handleClick(currentPage - 1)}
+    >
+      <h5>
+        Previous
+      </h5>
     </button>
     {[...Array(totalPages)].map((x, i) =>
       <button
@@ -14,11 +20,19 @@ const PaginationButtons = ({ currentPage, handleClick, handleNext, handlePreviou
         key={i}
         onClick={() => handleClick(i + 1)}
       >
-        <h5>{i + 1}</h5>
+        <h5>
+          {i + 1}
+        </h5>
       </button>
     )}
-    <button className={styles.button} onClick={handleNext} disabled={currentPage >= totalPages}>
-      <h5>Next</h5>
+    <button
+      className={styles.button}
+      disabled={currentPage >= totalPages}
+      onClick={() => handleClick(currentPage + 1)}
+    >
+      <h5>
+        Next
+      </h5>
     </button>
   </div>
 );
@@ -26,8 +40,6 @@ const PaginationButtons = ({ currentPage, handleClick, handleNext, handlePreviou
 PaginationButtons.propTypes = {
   currentPage: PropTypes.number.isRequired,
   handleClick: PropTypes.func,
-  handleNext: PropTypes.func,
-  handlePrevious: PropTypes.func,
   totalPages: PropTypes.number.isRequired
 };
 

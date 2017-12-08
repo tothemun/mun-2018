@@ -20,25 +20,9 @@ class BlogRoll extends Component {
     const { fetchAllPosts, location, totalPages, params } = this.props;
     const { currentPage } = this.state;
 
-    fetchAllPosts({ _embed: true, page: page, per_page: 1});
-    this.setState({currentPage: page});
-  }
-
-  handleNext = () => {
-    const { totalPages } = this.props;
-    const { currentPage } = this.state;
-
-    if(currentPage <= totalPages) {
-      this.fetchPageOfPosts(currentPage + 1);
-    }
-  }
-
-  handlePrevious = () => {
-    const { totalPages } = this.props;
-    const { currentPage } = this.state;
-
-    if(currentPage >  1) {
-      this.fetchPageOfPosts(currentPage - 1);
+    if(page <= totalPages && page >= 1) {
+      fetchAllPosts({ _embed: true, page: page, per_page: 1});
+      this.setState({currentPage: page});
     }
   }
 
@@ -46,15 +30,17 @@ class BlogRoll extends Component {
     const { totalPages, posts, postsFetching } = this.props;
     const { currentPage } = this.state;
 
+    if(postsFetching || !posts) {
+      return null;
+    }
+
     return (
       <Container className={baseStyles.pt5}>
-        { !postsFetching && posts && posts.map((post, key) => (
+        { !postsFetching && posts.map((post, key) => (
           <BlogPostCard key={key} post={post} loaded={!postsFetching} />
         ))}
         <PaginationButtons
           totalPages={totalPages}
-          handleNext={this.handleNext}
-          handlePrevious={this.handlePrevious}
           handleClick={this.fetchPageOfPosts}
           currentPage={currentPage}
         />
