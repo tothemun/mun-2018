@@ -43,31 +43,31 @@ class Homepage extends Component {
           <HomepageSection title='Select Work'>
             <Row>
               { pages.map((page, key) => (
-                <Col xs={6} key={key}>
+                <Col xs={12} md={6} key={key}>
                   <WorkCard page={page} loaded={fetchedPages}/>
                 </Col>
               ))}
             </Row>
           </HomepageSection>
           <HomepageSection title='Clients'>
-            <Row className={baseStyles.centerVert}>
+            <Row>
               <Col xs={6} md={4} lg={2}>
-                <ProgressiveImage src={Keurig} alt='Client' fit='contain'/>
+                <ProgressiveImage src={Keurig} alt='Client' fit='contain' className={baseStyles.mb4}/>
               </Col>
               <Col xs={6} md={4} lg={2}>
-                <ProgressiveImage src={SeventhGen} alt='Client' fit='contain' className={styles.svnthGen}/>
+                <ProgressiveImage src={SeventhGen} alt='Client' fit='contain' className={styles.svnthGen} className={baseStyles.mb4}/>
               </Col>
               <Col xs={6} md={4} lg={2}>
-                <ProgressiveImage src={Mamava} alt='Client' fit='contain'/>
+                <ProgressiveImage src={Mamava} alt='Client' fit='contain' className={baseStyles.mb4}/>
               </Col>
               <Col xs={6} md={4} lg={2}>
-                <ProgressiveImage src={HotelVT} alt='Client' style={{height: 50}} fit='contain'/>
+                <ProgressiveImage src={HotelVT} alt='Client' style={{height: 50}} fit='contain' className={baseStyles.mb4}/>
               </Col>
               <Col xs={6} md={4} lg={2}>
-                <ProgressiveImage src={Champlain} alt='Client' fit='contain'/>
+                <ProgressiveImage src={Champlain} alt='Client' fit='contain' className={baseStyles.mb4}/>
               </Col>
               <Col xs={6} md={4} lg={2}>
-                <ProgressiveImage src={Wildfire} alt='Client' fit='contain'/>
+                <ProgressiveImage src={Wildfire} alt='Client' fit='contain' className={baseStyles.mb4}/>
               </Col>
             </Row>
           </HomepageSection>
