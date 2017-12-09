@@ -20,3 +20,14 @@
   width: 100%;
   height: 29px;
 }
+
+
+@media (max-width: $sm) {
+  .content {
+    top: -50px;
+  }
+
+  .title {
+    text-shadow: 1px 1px 0 #fff;
+  }
+}

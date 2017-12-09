@@ -36,10 +36,10 @@ class WorkPage extends Component {
             </Col>
           </Row>
           <Row className={baseStyles.mb4}>
-            <Col xs={2}>
+            <Col xs={4} md={2}>
               <span className={cn(styles.block, baseStyles.patternHash)} />
             </Col>
-            <Col xs={10}>
+            <Col xs={8} md={10}>
               <Authors authors={page._embedded.author} textClass={baseStyles.faded} />
             </Col>
             <Col xs={12}>

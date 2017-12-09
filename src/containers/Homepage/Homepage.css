@@ -5,6 +5,7 @@
   position: relative;
   justify-content: center;
   margin-bottom: $spacingGiant;
+  height: 800px;
 
   &::before {
     background-color: #C5C5C5;
@@ -23,11 +24,13 @@
   border: 2px solid #222;
   padding: 10px;
   position: relative;
-}
+  height: 100%;
+  overflow: hidden;
 
-.image img {
-  width: 100%;
-  height: auto;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .headline {
@@ -35,9 +38,16 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  max-width: 80%;
 }
 
 .svnthGen {
   position: relative;
   top: -8px;
+}
+
+@media(max-width: $sm) {
+  .header {
+    height: 400px;
+  }
 }
