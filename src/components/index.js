@@ -5,6 +5,7 @@ import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import HomepageSection from './HomepageSection/HomepageSection';
 import HoverElement from './HoverElement/HoverElement';
+import Loader from './Loader/Loader';
 import Navigation from './Navigation/Navigation';
 import PaginationButtons from './PaginationButtons/PaginationButtons';
 import ProgressiveImage from './ProgressiveImage/ProgressiveImage';
@@ -19,6 +20,7 @@ export {
   Header,
   HomepageSection,
   HoverElement,
+  Loader,
   Navigation,
   PaginationButtons,
   ProgressiveImage,

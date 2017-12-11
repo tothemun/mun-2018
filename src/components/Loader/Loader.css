@@ -1,0 +1,59 @@
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rings {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  background: white;
+  margin: 0 auto;
+  border-radius: 50%;
+
+  &,&:before,&:after {
+    border: 4px solid $lightestGray;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    animation: spin 1s infinite ease-in-out alternate;
+  }
+
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  &:before {
+    height: 55px;
+    width: 55px;
+    top: -15px;
+    left: -15px;
+    animation-delay: 175ms;
+  }
+
+  &:after {
+    height: 78px;
+    width: 78px;
+    top: -26px;
+    left: -26px;
+    animation-delay: 250ms;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX( 0deg );
+  }
+
+  to {
+    transform: rotateX(180deg);
+  }
+}

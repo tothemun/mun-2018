@@ -4,5 +4,5 @@ import PaginationButtons from './PaginationButtons';
 
 storiesOf('Pagination Butttons', module)
   .add('Default', () => (
-    <PaginationButtons totalPages={4} currentPage={0} handleClick={}/>
+    <PaginationButtons totalPages={4} currentPage={0} handleClick={() => {}}/>
   ))
