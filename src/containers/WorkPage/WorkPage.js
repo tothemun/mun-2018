@@ -47,7 +47,7 @@ class WorkPage extends Component {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} lg={8}>
+            <Col xs={12}>
               <WPContent content={page.content.rendered} />
             </Col>
           </Row>

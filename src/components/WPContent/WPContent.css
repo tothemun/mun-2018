@@ -1,0 +1,50 @@
+.container {
+  figure {
+    margin: 0 0 $spacingLarge 0;
+    max-width: 100% !important;
+
+    img {
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: $spacingLarge;
+  }
+
+  figcaption {
+    font-family: $bodyFamily;
+    font-size: 0.758rem;
+    line-height: 1rem;
+    letter-spacing: 1px;
+    line-height: resolve(22 / $remBase)rem;
+    font-weight: 400;
+    margin-bottom: $spacingBase;
+  }
+
+  p {
+    width: 66.6667%;
+  }
+
+  h2 {
+    margin-top: $spacingGiant;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 88%;
+      border-bottom: 1px solid $lightGray;
+    }
+  }
+}
+
+
+@media (max-width: $sm) {
+  .container {
+    p {
+      width: auto;
+    }
+  }
+}

@@ -23,7 +23,7 @@ const Footer = () => (
           <h5 className={baseStyles.mb0}>Brooklyn, NY 11237</h5>
         </Col>
         <Col xs={12} md={4} offset={{md: 6}}>
-          <div className={cn({[baseStyles.pullRight]: window.innerWidth > variables.sm})}>
+          <div className={cn({[baseStyles.pullRight]: window.innerWidth > parseInt(variables.sm, 10)})}>
             <a href='https://www.instagram.com/tothemunstudio/'  className={styles.social}>
               <img src={Instagram} alt='Instagram'/>
             </a>
