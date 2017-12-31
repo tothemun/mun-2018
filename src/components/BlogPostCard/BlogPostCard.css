@@ -1,3 +1,9 @@
+.link {
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+
 .image {
   overflow: hidden;
   position: absolute;

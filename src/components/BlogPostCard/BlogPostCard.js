@@ -15,7 +15,7 @@ const BlogPostCard = ({ loaded, post }) => {
   return (
     <Row className={styles.container}>
       <Col sm={12} md={4}>
-        <Link to={`/post/${post.id}`}>
+        <Link className={styles.link} to={`/post/${post.id}`}>
           <ProgressiveImage
             className={styles.image}
             src={post._embedded['wp:featuredmedia'][0].source_url}

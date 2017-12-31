@@ -36,10 +36,10 @@ class WorkPage extends Component {
             </Col>
           </Row>
           <Row className={baseStyles.mb4}>
-            <Col xs={2}>
+            <Col xs={4} md={2}>
               <span className={cn(styles.block, baseStyles.patternHash)} />
             </Col>
-            <Col xs={10}>
+            <Col xs={8} md={10}>
               <Authors authors={page._embedded.author} textClass={baseStyles.faded} />
             </Col>
             <Col xs={12}>
@@ -47,7 +47,7 @@ class WorkPage extends Component {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} lg={8}>
+            <Col xs={12}>
               <WPContent content={page.content.rendered} />
             </Col>
           </Row>

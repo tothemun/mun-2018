@@ -1,6 +1,7 @@
 html {
   font-size: $(remBase)px;
   color: $textColor;
+  font-family: 'Graphik', Helvetica, sans-serif;
 }
 
 strong {
@@ -90,5 +91,16 @@ blockquote {
     right: 100%;
     top: 11px;
     margin-right: $spacingSmall;
+  }
+}
+
+@media(max-width: $sm) {
+  html {
+    font-size: resolve($remBase * .7)px;
+  }
+
+  h1 {
+    font-size: 1.854rem;
+    line-height: resolve(40 / $remBase)rem;
   }
 }

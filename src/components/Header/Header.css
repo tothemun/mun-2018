@@ -36,3 +36,9 @@
   width: 100%;
   height: auto;
 }
+
+@media (max-width: $sm) {
+  .container {
+    height: 150px;
+  }
+}

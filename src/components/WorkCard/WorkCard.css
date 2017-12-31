@@ -1,8 +1,8 @@
 .container {
   display: none;
-  margin-bottom: $spacingMedium;
+  margin-bottom: $spacingHuge;
   cursor: pointer;
-  
+
   &:hover {
     .title {
       opacity: 1;
