@@ -1,6 +1,7 @@
 $imageAnimationTime: 650;
 $borderAnimationTime: 1;
 $backgroundAnimationTime: 500;
+$borderThickness: 4px;
 
 .header {
   width: 100%;
@@ -30,7 +31,7 @@ $backgroundAnimationTime: 500;
   position: relative;
   height: 100%;
   overflow: hidden;
-  display: none;
+  visibility: hidden;
   animation-name: slideUpFadeIn;
   animation-timing-function: ease;
   animation-duration: $(imageAnimationTime)ms;
@@ -52,6 +53,10 @@ $backgroundAnimationTime: 500;
   max-width: 80%;
 }
 
+.display {
+  visibility: inherit;
+}
+
 @media(max-width: $sm) {
   .header {
     height: 400px;
@@ -61,50 +66,37 @@ $backgroundAnimationTime: 500;
 
 .top, .right, .bottom, .left {
   position: absolute;
-  background: transparent;
-  width: 0px;
-  height: 0px;
-
-  animation-duration: .3s;
-  animation-iteration-count:1;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
+  background: $primaryColor;
 }
 
-.display {
-  display: inherit;
+.top, .bottom {
+  height: $borderThickness;
+  width: 0;
+}
+
+.left, .right {
+  width: $borderThickness;
+  height: 0;
 }
 
 .top {
   left: 0;
-  bottom: 0;
-  width: 2px;
-  animation-name: top;
-  animation-delay: resolve(0 + $imageAnimationTime + 250)ms;
+  top: 0;
 }
 
 .right {
   top: 0;
-  left: 0;
-  height: 2px;
-  animation-name: right;
-  animation-delay: resolve(400 + $imageAnimationTime + 250)ms;
+  right: 0;
 }
 
 .bottom {
   right: 0;
-  top: 0;
-  width: 2px;
-  animation-name: bottom;
-  animation-delay: resolve(800 + $imageAnimationTime + 250)ms;
+  bottom: 0;
 }
 
 .left {
   bottom: 0;
-  right: 0;
-  height: 2px;
-  animation-name: left;
-  animation-delay: resolve(1200 + $imageAnimationTime + 250)ms;
+  left: 0;
 }
 
 @keyframes appear {
@@ -122,24 +114,4 @@ $backgroundAnimationTime: 500;
     opacity: 1;
     transform: translateY(0)  ;
   }
-}
-
-@keyframes top {
-  0%    { height: 0; background: #000; }
-  100%  { height: 100%; background: #000; }
-}
-
-@keyframes right {
-  0%    { width: 0; background: #000; }
-  100%  { width: 100%; background: #000; }
-}
-
-@keyframes bottom {
-  0%    { height: 0; background: #000; }
-  100%  { height: 100%; background: #000; }
-}
-
-@keyframes left {
-  0%    { width: 0; background: #000; }
-  100%  { width: 100%; background: #000; }
 }
