@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Col, Row } from 'react-grid-system';
@@ -28,17 +29,13 @@ class Homepage extends Component {
     fetchAllPosts();
   }
 
-  componentDidMount() {
-    this.setState({loaded: true});
-  }
-
   render() {
     const { fetchedPosts, fetchedPages, pages, posts } = this.props;
     const clientClass = window.innerWidth > parseInt(variables.sm, 10) ? baseStyles.centerVert : null;
 
     return (
       <div className={baseStyles.pt5}>
-        <HomepageHeader display={this.state.loaded}/>
+        <HomepageHeader />
         <Container>
           <HomepageSection title='Select Work'>
             <Row>
@@ -55,7 +52,7 @@ class Homepage extends Component {
                 <ProgressiveImage src={Keurig} alt='Client' fit='contain' className={baseStyles.mb4}/>
               </Col>
               <Col xs={6} md={4} lg={2}>
-                <ProgressiveImage src={SeventhGen} alt='Client' fit='contain' className={styles.svnthGen} className={baseStyles.mb4}/>
+                <ProgressiveImage src={SeventhGen} alt='Client' fit='contain' className={cn(styles.svnthGen, baseStyles.mb4)}/>
               </Col>
               <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={Mamava} alt='Client' fit='contain' className={baseStyles.mb4}/>
@@ -84,10 +81,6 @@ class Homepage extends Component {
       </div>
     );
   }
-
-  state = {
-    loaded: false
-  };
 }
 
 const mapStateToProps = (state) => ({

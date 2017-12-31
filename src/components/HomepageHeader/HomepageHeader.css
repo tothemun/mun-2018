@@ -31,18 +31,16 @@ $borderThickness: 4px;
   position: relative;
   height: 100%;
   overflow: hidden;
-  visibility: hidden;
-  animation-name: slideUpFadeIn;
-  animation-timing-function: ease;
-  animation-duration: $(imageAnimationTime)ms;
-  animation-delay: 250ms;
-  animation-fill-mode: forwards;
-  opacity: 0;
 
   img {
     width: 100%;
     height: 100%;
   }
+}
+
+.imageContainer {
+  height: 100%;
+  opacity: 0;
 }
 
 .headline {
