@@ -8,7 +8,7 @@ storiesOf('WorkCard', module)
   .add('Normal', () => (
     <Container>
       <Row>
-        <Col xs={6}>
+        <Col xs={12} md={6}>
           <WorkCard
             loaded={true}
             page={testData}

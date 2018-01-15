@@ -71,7 +71,7 @@ h6 {
 p {
   font-family: $bodyFamily;
   font-size: 1rem;
-  line-height: resolve(28 / $remBase)rem;
+  line-height: resolve(20 / $remBase)rem;
   letter-spacing: 1px;
   margin-bottom: $spacingMedium;
 }

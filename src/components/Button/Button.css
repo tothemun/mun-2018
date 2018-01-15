@@ -48,6 +48,12 @@
   }
 }
 
+.block {
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 @media(max-width: $sm) {
   .container {
     display: block;
