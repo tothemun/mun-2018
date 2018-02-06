@@ -24,8 +24,6 @@
     margin-bottom: $spacingBase;
   }
 
-
-
   p {
     width: 66.6667%;
   }
@@ -41,7 +39,6 @@
     }
   }
 }
-
 
 @media (max-width: $sm) {
   .container {
