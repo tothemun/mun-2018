@@ -14,7 +14,7 @@ const BlogPostCard = ({ loaded, post }) => {
 
   return (
     <Row className={styles.container}>
-      <Col sm={12} md={4}>
+      <Col sm={12} md={4} className={baseStyles.containContent}>
         <Link className={styles.link} to={`/post/${post.id}`}>
           <ProgressiveImage
             className={styles.image}
