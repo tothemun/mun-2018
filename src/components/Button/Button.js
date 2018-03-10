@@ -4,11 +4,11 @@ import styles from './Button.css';
 
 class Button extends Component {
   render() {
-    const { children, to, additionalStyles } = this.props;
+    const { children, className, to, additionalStyles } = this.props;
     const styleClasses = additionalStyles.map(style => styles[style]);
-    
+
     return (
-      <a className={cn(styles.container, styleClasses)} href={to}>
+      <a className={cn(styles.container, styleClasses, className)} href={to}>
         <p>{children}</p>
       </a>
     );

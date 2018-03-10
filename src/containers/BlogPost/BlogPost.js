@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Col, Row } from 'react-grid-system';
 import { clearActivePost, fetchPost } from '_actions/postActions';
-import { Authors, Header, WPContent } from '_components';
+import { Authors, Header, NewsletterSignup, WPContent } from '_components';
 import baseStyles from '_styles/index.css';
 import styles from './BlogPost.css';
 
@@ -48,6 +48,11 @@ class BlogPost extends Component {
           <Row>
             <Col xs={12}>
               <WPContent content={post.content.rendered} />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <NewsletterSignup />
             </Col>
           </Row>
         </Container>

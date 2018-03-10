@@ -1,0 +1,42 @@
+.container {
+  display: block;
+  margin-bottom: $spacingLarge;
+}
+
+.label {
+  display: block;
+  font-family: $bodyFamily;
+  font-size: 1rem;
+  line-height: resolve(28 / $remBase)rem;
+  letter-spacing: .8px;
+  margin-bottom: $spacingSmall;
+}
+
+.helpText {
+  display: block;
+  margin-top: $spacingBase;
+  margin-bottom: 0;
+  letter-spacing: .6px;
+  text-transform: none;
+}
+
+.alertBlock {
+  font-size: 1rem;
+  margin-top: $spacingBase;
+}
+
+.hasError {
+  .label {
+    color: $errorColor;
+  }
+
+  .alertBlock {
+    color: $errorColor;
+  }
+}
+
+@media (max-width: $sm) {
+  .label {
+    font-size: 16px;
+  }
+}
