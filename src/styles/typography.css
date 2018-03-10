@@ -72,7 +72,7 @@ p {
   font-family: $bodyFamily;
   font-size: 1rem;
   line-height: resolve(28 / $remBase)rem;
-  letter-spacing: 1px;
+  letter-spacing: .8px;
   margin-bottom: $spacingMedium;
 }
 

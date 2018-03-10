@@ -14,3 +14,6 @@ storiesOf('Input', module)
   .add('Error', () => (
     <Input label='Input' placeholder='Enter Text...' error='There was an error'/>
   ))
+  .add('With Button', () => (
+    <Input label='Input' placeholder='Enter Text...' onButton={() => console.log('Clicked')} buttonText='Submit'/>
+  ))

@@ -48,6 +48,17 @@
   }
 }
 
+.inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reverse {
+  color: #fff;
+  background-color: $primaryColor;
+}
+
 @media(max-width: $sm) {
   .container {
     display: block;
