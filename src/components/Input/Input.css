@@ -1,0 +1,36 @@
+.label {
+  display: block;
+  font-family: $bodyFamily;
+  font-size: 1rem;
+  line-height: resolve(28 / $remBase)rem;
+  letter-spacing: 1px;
+  margin-bottom: $spacingSmall;
+}
+
+.input {
+  transition: $defaultTransition all;
+  border: 2px solid $primaryColor;
+  padding: $spacingSmall;
+}
+
+.helpText, .error {
+  margin-top: $spacingBase;
+}
+
+.helpText {
+  color: $lightGray;
+}
+
+.error {
+  color: $errorColor;
+}
+
+.hasError {
+  .label {
+    color: $errorColor;
+  }
+
+  .input {
+    border-color: $errorColor;
+  }
+}
