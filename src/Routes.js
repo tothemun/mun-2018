@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
+import { WithAnalytics } from '_components';
 import {
   App,
   BlogRoll,
@@ -13,7 +14,7 @@ class Routes extends Component {
   render() {
     return (
       <Router history={history} onUpdate={() => window.scrollTo(0, 0)}>
-        <Route path='/' component={App}>
+        <Route path='/' component={WithAnalytics(App)}>
           <IndexRoute component={Homepage} />
           <Route path='/posts' component={BlogRoll} />
           <Route path='/post/:id' component={BlogPost} />

@@ -9,6 +9,7 @@ import HoverElement from './HoverElement/HoverElement';
 import Navigation from './Navigation/Navigation';
 import PaginationButtons from './PaginationButtons/PaginationButtons';
 import ProgressiveImage from './ProgressiveImage/ProgressiveImage';
+import WithAnalytics from './WithAnalytics';
 import WorkCard from './WorkCard/WorkCard';
 import WPContent from './WPContent/WPContent';
 
@@ -24,6 +25,7 @@ export {
   Navigation,
   PaginationButtons,
   ProgressiveImage,
+  WithAnalytics,
   WorkCard,
   WPContent
 };
