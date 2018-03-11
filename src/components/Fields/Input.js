@@ -9,7 +9,6 @@ class Input extends Component {
     const {
       children,
       input,
-      inputType,
       name,
       placeholder,
       type,

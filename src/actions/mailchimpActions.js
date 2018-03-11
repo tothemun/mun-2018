@@ -1,10 +1,18 @@
 import axios from 'axios';
+import { URL_BASE } from './ApiRoutes';
 
-const apiKey = process.env.REACT_APP_MAILCHIMP_KEY || '';
+export function subscribeEmail(email) {
+  const data = {
+    email,
+    status: 'subscribed'
+  };
 
-export function signupEmail(email) {
-  axios.post('https://muncreative.us15.list-manage.com/subscribe/post')
+  console.log(data);
+
+  return dispatch => {
+    axios.post(`${URL_BASE}/mailchimp/v1/signup`, data)
     .then(res => {
-      console.log(res.data);
-    })
+      console.log(res);
+    });
+  }
 }

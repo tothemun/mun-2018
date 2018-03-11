@@ -35,7 +35,7 @@ const BlogPostCard = ({ loaded, post }) => {
         <div className={baseStyles.mb3}>
           {htmlParse(post.excerpt.rendered)}
         </div>
-        <Button to={`/post/${post.id}`}>Read</Button>
+        <Button to={`/post/${post.id}`} label='Read'/>
       </Col>
     </Row>
   );
