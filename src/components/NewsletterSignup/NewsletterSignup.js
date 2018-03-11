@@ -15,13 +15,12 @@ class NewsletterSignup extends Component {
   }
 
   submit = (values) => {
-    console.log(values)
     return subscribeEmail(values);
   }
 
   render() {
     const { copyOption } = this.state;
-    const { handleSubmit, subscribeEmail } = this.props;
+    const { handleSubmit, submitting, subscribeEmail } = this.props;
     const { items } = copy;
 
     return (
@@ -36,7 +35,14 @@ class NewsletterSignup extends Component {
             type='email'
             containerClass={baseStyles.mb0}
           >
-            <Button className={cn(baseStyles.center, styles.button)} type='submit' label='Subscribe' additionalStyles={['reverse']} />
+            <Button
+              additionalStyles={['reverse']}
+              className={cn(baseStyles.center, styles.button)}
+              disabled={submitting}
+              submitting={submitting}
+              label='Subscribe'
+              type='submit'
+            />
           </Field>
         </form>
       </div>
@@ -47,6 +53,11 @@ class NewsletterSignup extends Component {
     copyOption: 0
   };
 };
+
+const mapStateToProps = (state) => ({
+  submitting: state.form.emailSignup.submitting,
+  submitSucceeded: state.form.emailSignup.submitSucceeded
+})
 
 export default connect(null, { subscribeEmail })(reduxForm({
   form: 'emailSignup'

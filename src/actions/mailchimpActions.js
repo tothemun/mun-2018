@@ -6,13 +6,6 @@ export function subscribeEmail({ email }) {
     email,
     status: 'subscribed'
   };
-
-  console.log(data);
-
-  return dispatch => {
-    axios.post(`${URL_BASE}/mailchimp/v1/subscribe`, data)
-    .then(res => {
-      console.log(res);
-    });
-  }
+  
+  return axios.post(`${URL_BASE}/mailchimp/v1/subscribe`, data);
 }
