@@ -22,7 +22,7 @@
 .mr4 { margin-right: $spacingLarge; }
 .mr5 { margin-right: $spacingGiant; }
 
-.mb0 { margin-bottom: 0; }
+.mb0 { margin-bottom: 0 !important; }
 .mb1 { margin-bottom: $spacingBase; }
 .mb2 { margin-bottom: $spacingSmall; }
 .mb3 { margin-bottom: $spacingMedium; }

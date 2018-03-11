@@ -47,7 +47,7 @@ class BlogPost extends Component {
           </Row>
           <Row>
             <Col xs={12}>
-              <WPContent content={post.content.rendered} />
+              <WPContent content={post.content.rendered} className={baseStyles.mb6}/>
             </Col>
           </Row>
           <Row>

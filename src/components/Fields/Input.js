@@ -8,6 +8,7 @@ class Input extends Component {
   render() {
     const {
       children,
+      componentClass,
       input,
       name,
       placeholder,
@@ -16,7 +17,7 @@ class Input extends Component {
     } = this.props;
 
     return (
-      <div className={styles.fieldContainer}>
+      <div className={cn(componentClass, styles.fieldContainer)}>
         <input
           type={type}
           name={name}

@@ -37,3 +37,10 @@
 .closedEye {
   top: 21px;
 }
+
+@media(max-width: $sm) {
+  .fieldContainer {
+    width: 100%;
+    display: block;
+  }
+}

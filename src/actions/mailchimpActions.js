@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { URL_BASE } from './ApiRoutes';
 
-export function subscribeEmail(email) {
+export function subscribeEmail({ email }) {
   const data = {
     email,
     status: 'subscribed'
@@ -10,7 +10,7 @@ export function subscribeEmail(email) {
   console.log(data);
 
   return dispatch => {
-    axios.post(`${URL_BASE}/mailchimp/v1/signup`, data)
+    axios.post(`${URL_BASE}/mailchimp/v1/subscribe`, data)
     .then(res => {
       console.log(res);
     });

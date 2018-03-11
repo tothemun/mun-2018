@@ -8,6 +8,7 @@ function inputGroup(WrappedComponent) {
   return (props) => {
     const {
       children,
+      containerClass,
       className,
       label,
       helpText,
@@ -37,7 +38,7 @@ function inputGroup(WrappedComponent) {
     };
 
     return (
-      <div className={cn(className, styles.container, statusClass)}>
+      <div className={cn(containerClass, styles.container, statusClass)}>
         <label className={styles.label}>
           {label}
           { helpText && <h5 className={styles.helpText}> {helpText} </h5> }

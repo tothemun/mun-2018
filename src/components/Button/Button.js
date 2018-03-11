@@ -16,11 +16,11 @@ class Button extends Component {
   }
 
   renderButton() {
-    const { onClick, label, type } = this.props;
+    const { className, onClick, label, type } = this.props;
 
     return (
       <button
-        className={cn(this.styleClasses, styles.container)}
+        className={cn(this.styleClasses, className, styles.container)}
         onClick={onClick}
         ref={(el) => { this.$element = el; }}
         type={type}
@@ -31,20 +31,20 @@ class Button extends Component {
   }
 
   renderLink() {
-    const { label, to } = this.props;
+    const { className, label, to } = this.props;
 
     return (
-      <Link to={to} className={cn(this.styleClasses, styles.container)} ref={(el) => { this.$element = el; }}>
+      <Link to={to} className={cn(this.styleClasses, className, styles.container)} ref={(el) => { this.$element = el; }}>
         { label }
       </Link>
     )
   }
 
   renderAnchor() {
-    const { href, label } = this.props;
+    const { className, href, label } = this.props;
 
     return (
-      <a href={href} className={cn(this.styleClasses, styles.container)} ref={(el) => { this.$element = el; }}>
+      <a href={href} className={cn(this.styleClasses, className, styles.container)} ref={(el) => { this.$element = el; }}>
         {label}
       </a>
     );
