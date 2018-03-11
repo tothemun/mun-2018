@@ -41,12 +41,12 @@ function inputGroup(WrappedComponent) {
       <div className={cn(containerClass, styles.container, statusClass)}>
         <label className={styles.label}>
           {label}
-          { helpText && <h5 className={styles.helpText}> {helpText} </h5> }
         </label>
         <WrappedComponent
           { ...other }
           { ...newProps }
         />
+        { helpText && <h5 className={styles.helpText}> {helpText} </h5> }
         {alertBlock}
       </div>
     )

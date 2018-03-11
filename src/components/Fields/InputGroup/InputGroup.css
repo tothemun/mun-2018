@@ -18,6 +18,7 @@
   margin-bottom: 0;
   letter-spacing: .6px;
   text-transform: none;
+  color: $lightGray;
 }
 
 .alertBlock {
