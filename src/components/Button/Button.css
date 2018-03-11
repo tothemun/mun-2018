@@ -1,15 +1,25 @@
+.wrapper {
+  position: relative;
+}
+
 .container {
   border: 2px solid $primaryColor;
   padding: $spacingBase $spacingLarge;
   text-align: center;
   width: auto;
+  height: 100%;
   display: inline-block;
   cursor: pointer;
   transition: $defaultTransition all;
   position: relative;
-  background: white;
+  background-color: #fff;
   text-decoration: none;
   color: $textColor;
+  font-family: $bodyFamily;
+  font-size: 1rem;
+  line-height: resolve(28 / $remBase)rem;
+  letter-spacing: .8px;
+  font-weight: 600;
 
   &:before {
     content: '';
@@ -24,11 +34,6 @@
     z-index: -1;
   }
 
-  p {
-    font-weight: 600;
-    margin: 0;
-  }
-
   &:hover {
     background-color: $primaryColor;
     border-color: $#fff;
@@ -37,14 +42,33 @@
     &:before {
       transform: translate(-$spacingBase, $spacingBase);
     }
-
-    p {
-      color: #fff;
-    }
   }
 
   &:active {
     background-color: color($primaryColor tint(15));
+  }
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reverse {
+  color: #fff;
+  background-color: $primaryColor;
+}
+
+.submitting {
+  color: transparent;
+
+  &:hover {
+    color: transparent;
+
+    &:before {
+      transform: none;
+    }
   }
 }
 

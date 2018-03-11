@@ -10,11 +10,11 @@ import {
 } from './types';
 
 function getPages(query = { _embed: true }) {
-  return axios.get(`${URL_BASE}/pages?${qs.stringify(query)}`);
+  return axios.get(`${URL_BASE}/wp/v2/pages?${qs.stringify(query)}`);
 }
 
 function getPage(id, query = { _embed: true }) {
-  return axios.get(`${URL_BASE}/pages/${id}?${qs.stringify(query)}`);
+  return axios.get(`${URL_BASE}/wp/v2/pages/${id}?${qs.stringify(query)}`);
 }
 
 export function fetchAllPages(query = { _embed: true}) {

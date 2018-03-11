@@ -27,7 +27,7 @@ class WorkPage extends Component {
     }
 
     return (
-      <div className={baseStyles.pt4}>
+      <div className={styles.container}>
         <Header src={page._embedded['wp:featuredmedia'][0].source_url} />
         <Container className={styles.content}>
           <Row>
@@ -35,7 +35,7 @@ class WorkPage extends Component {
               <h1 className={styles.title}>{page.title.rendered}</h1>
             </Col>
           </Row>
-          <Row className={baseStyles.mb4}>
+          <Row className={baseStyles.mb3}>
             <Col xs={4} md={2}>
               <span className={cn(styles.block, baseStyles.patternHash)} />
             </Col>

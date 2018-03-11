@@ -8,7 +8,7 @@ module.exports = {
   textColor: '#222',
   lightGray: '#9B9B9B',
   lightestGray: '#ededed',
-  errorColor: '#E74536',
+  errorColor: '#D0021B',
   warningColor: '#E7CD4A',
   containerWidth: '1140px',
   gutterWidth: '15px',

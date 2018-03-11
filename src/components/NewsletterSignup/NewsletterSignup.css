@@ -1,0 +1,18 @@
+.wrapper {
+  background-color: $lightestGray;
+  padding: $spacingMedium;
+}
+
+.button {
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media(max-width: $sm) {
+  .button {
+    width: 100%;
+    display: block;
+  }
+}

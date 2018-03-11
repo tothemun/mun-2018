@@ -11,11 +11,11 @@ import {
 } from './types';
 
 function getPosts(query = { _embed: true }) {
-  return axios.get(`${URL_BASE}/posts?${qs.stringify(query)}`);
+  return axios.get(`${URL_BASE}/wp/v2/posts?${qs.stringify(query)}`);
 }
 
 function getPost(id, query = { _embed: true }) {
-  return axios.get(`${URL_BASE}/posts/${id}?${qs.stringify(query)}`);
+  return axios.get(`${URL_BASE}/wp/v2/posts/${id}?${qs.stringify(query)}`);
 }
 
 export function fetchAllPosts(query = { _embed: true }) {

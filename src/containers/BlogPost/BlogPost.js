@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Col, Row } from 'react-grid-system';
 import { clearActivePost, fetchPost } from '_actions/postActions';
-import { Authors, Header, WPContent } from '_components';
+import { Authors, Header, NewsletterSignup, WPContent } from '_components';
 import baseStyles from '_styles/index.css';
 import styles from './BlogPost.css';
 
@@ -26,7 +26,7 @@ class BlogPost extends Component {
     }
 
     return (
-      <div className={baseStyles.pt4}>
+      <div className={styles.container}>
         <Header src={post._embedded['wp:featuredmedia'][0].source_url} />
         <Container className={styles.content}>
           <Row>
@@ -34,7 +34,7 @@ class BlogPost extends Component {
               <h1 className={styles.title}>{post.title.rendered}</h1>
             </Col>
           </Row>
-          <Row className={baseStyles.mb4}>
+          <Row className={baseStyles.mb3}>
             <Col xs={4} md={2}>
               <span className={cn(styles.block, baseStyles.patternHash)} />
             </Col>
@@ -47,7 +47,12 @@ class BlogPost extends Component {
           </Row>
           <Row>
             <Col xs={12}>
-              <WPContent content={post.content.rendered} />
+              <WPContent content={post.content.rendered} className={baseStyles.mb6}/>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <NewsletterSignup />
             </Col>
           </Row>
         </Container>
