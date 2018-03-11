@@ -20,14 +20,14 @@ class NewsletterSignup extends Component {
 
   render() {
     const { copyOption } = this.state;
-    const { handleSubmit, submitting, subscribeEmail } = this.props;
+    const { handleSubmit, submitting, submitSucceeded, subscribeEmail } = this.props;
     const { items } = copy;
 
     return (
       <div className={styles.wrapper}>
         <h4>{items[copyOption].headline}</h4>
         <p className={baseStyles.mb4}>{items[copyOption].body}</p>
-        <form onSubmit={handleSubmit(this.submit)}>
+        <form onSubmit={handleSubmit(this.submit)} className={cn({[baseStyles.mb1]: submitSucceeded})}>
           <Field
             component={Input}
             placeholder="Email here."
@@ -45,6 +45,7 @@ class NewsletterSignup extends Component {
             />
           </Field>
         </form>
+        { submitSucceeded && <p className={baseStyles.m0}>Successfully subscribed.</p> }
       </div>
     );
   }
