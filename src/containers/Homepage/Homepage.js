@@ -44,8 +44,8 @@ class Homepage extends Component {
           <HomepageSection title='Select Work'>
             <Row>
               { pages.map((page, key) => (
-                <Col xs={12} key={key}>
-                  <WorkCard page={page} loaded={fetchedPages}/>
+                <Col xs={8} offset={{ xs: key % 2 * 4 }} key={key}>
+                  <WorkCard page={page} loaded={fetchedPages} iteration={key}/>
                 </Col>
               ))}
             </Row>

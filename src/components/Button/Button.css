@@ -25,10 +25,10 @@
     content: '';
     display: block;
     position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    left: -2px;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
     transition: $defaultTransition all;
     border: 2px solid $primaryColor;
     z-index: -1;
@@ -53,6 +53,8 @@
   display: block;
   padding-left: 0;
   padding-right: 0;
+  z-index: 1;
+  background: white;
 }
 
 .inline {

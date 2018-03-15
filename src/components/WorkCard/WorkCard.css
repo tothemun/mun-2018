@@ -59,6 +59,11 @@
   }
 }
 
+.left {
+  left: -60px;
+  right: auto;
+}
+
 @keyframes slideUpFadeIn {
   from {
     opacity: 0;
