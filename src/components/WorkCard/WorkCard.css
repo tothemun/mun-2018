@@ -1,6 +1,6 @@
 .container {
   display: none;
-  margin-bottom: $spacingHuge;
+  margin-bottom: 140px;
   cursor: pointer;
 }
 
@@ -9,6 +9,8 @@
 }
 
 .image {
+  height: 400px;
+
   &:after {
     opacity: 0;
     content: '';
@@ -62,6 +64,20 @@
 .left {
   left: -60px;
   right: auto;
+}
+
+@media (max-width: $sm) {
+  .left {
+    left: 5%;
+  }
+
+  .details {
+    right: auto;
+    top: auto;
+    bottom: -60px;
+    width: 90%;
+    left: 5%;
+  }
 }
 
 @keyframes slideUpFadeIn {
