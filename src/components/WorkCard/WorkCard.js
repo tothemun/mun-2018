@@ -11,7 +11,7 @@ const WorkCard = ({ loaded, page }) => (
         <p className={styles.title}>{page.title.rendered}</p>
         <WPContent content={page.excerpt.rendered} />
       </div>
-      <Button to='' type='block'>
+      <Button to='' additionalStyles={['block']}>
         View
       </Button>
     </div>

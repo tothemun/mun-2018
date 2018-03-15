@@ -45,6 +45,10 @@ body {
   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQYV2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEjpMcPgAAAABJRU5ErkJggg==);
 }
 
+.containContent {
+  overflow: hidden;
+}
+
 :global {
   .link-more {
     display: none;

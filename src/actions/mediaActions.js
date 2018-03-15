@@ -3,7 +3,7 @@ import { URL_BASE } from './ApiRoutes';
 import { ADD_MEDIA, SET_MEDIA_FETCHING, MEDIA_ERROR } from './types';
 
 function getMedia(id) {
-  return axios.get(`${URL_BASE}/media/${id}`);
+  return axios.get(`${URL_BASE}/wp/v2/media/${id}`);
 }
 
 export function fetchMedia(id) {

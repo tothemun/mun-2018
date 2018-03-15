@@ -4,7 +4,5 @@ import Button from './Button';
 
 storiesOf('Buttons', module)
   .add('Default', () => (
-    <Button>
-      Label
-    </Button>
+    <Button label='label' />
   ))

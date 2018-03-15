@@ -14,7 +14,7 @@ const initialState = {
   fetched: false,
   fetching: false,
   posts: [],
-  pages: null
+  pages: 0
 };
 
 export default createReducer(initialState, {

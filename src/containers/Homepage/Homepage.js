@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Col, Row } from 'react-grid-system';
@@ -55,7 +56,7 @@ class Homepage extends Component {
                 <ProgressiveImage src={Keurig} alt='Client' fit='contain' className={baseStyles.mb4}/>
               </Col>
               <Col xs={6} md={4} lg={2}>
-                <ProgressiveImage src={SeventhGen} alt='Client' fit='contain' className={styles.svnthGen} className={baseStyles.mb4}/>
+                <ProgressiveImage src={SeventhGen} alt='Client' fit='contain' className={cn(baseStyles.mb4, styles.svnthGen)}/>
               </Col>
               <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={Mamava} alt='Client' fit='contain' className={baseStyles.mb4}/>

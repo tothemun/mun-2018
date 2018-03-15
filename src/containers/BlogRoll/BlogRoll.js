@@ -13,7 +13,7 @@ class BlogRoll extends Component {
 
     const page = query.page || 1;
 
-    fetchAllPosts({ _embed: true, page: page, per_page: 1});
+    fetchAllPosts({ _embed: true, page: page, per_page: 5});
   }
 
   fetchPageOfPosts = (page) => {
