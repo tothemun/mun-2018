@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { Expo, TimelineMax, TweenLite } from 'gsap';
+import { Expo, TimelineMax } from 'gsap';
 import React, { Component } from 'react';
 import GSAP from 'react-gsap-enhancer';
 import PropTypes from 'prop-types';
@@ -18,8 +18,9 @@ class HomepageHeader extends Component {
   }
 
   animateBox = () => {
+    const masterTl = new TimelineMax();
 
-    const timeline = new TimelineMax()
+    const borderTl = new TimelineMax()
       .to('#left-side', .5, {
         height: '100%'
       })
@@ -33,16 +34,25 @@ class HomepageHeader extends Component {
         width: '100%'
       });
 
-    return timeline.tweenFromTo(0, timeline.duration(), {
+    borderTl.tweenFromTo(0, borderTl.duration(), {
       ease: Expo.easeInOut,
       immediateRender: false
     });
-  }
 
-  animateImage = () => {
-    return new TweenLite.to('#image', 1, {
-      opacity: 1
+    const imageTl = new TimelineMax()
+      .to(this.$image, .5, {
+        opacity: 1
+      });
+
+    imageTl.tweenFromTo(0, imageTl.duration(), {
+      immediateRender: false
     });
+
+    masterTl
+      .add(borderTl, 0)
+      .add(imageTl, 1);
+
+    return masterTl;
   }
 
   render() {
@@ -55,7 +65,7 @@ class HomepageHeader extends Component {
           <span id='top-side' className={styles.top}></span>
           <span id='right-side' className={styles.right}></span>
           <span id='bottom-side' className={styles.bottom}></span>
-          <div id='image' className={styles.imageContainer}>
+          <div className={styles.imageContainer} ref={(el) => { this.$image = el; }}>
             <ProgressiveImage src={HeaderImg} alt='Header' />
             <object data={Headline} alt='Make It Matter' aria-label='Make It Matter' className={styles.headline}/>
           </div>

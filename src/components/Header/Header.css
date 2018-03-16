@@ -1,28 +1,8 @@
-/*.container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  justify-content: center;
-  margin-bottom: $spacingGiant;
-
-  &::before {
-    background-color: #C5C5C5;
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: calc(100% - 120px);
-    z-index: -1;
-  }
-}*/
-
 .container {
   height: 540px;
   width: 80%;
   margin: 0 auto;
 }
-
 
 .image {
   width: 80%;
@@ -40,5 +20,6 @@
 @media (max-width: $sm) {
   .container {
     height: 150px;
+    width: 100%;
   }
 }

@@ -1,3 +1,7 @@
+.container {
+  padding-top: $spacingLarge;
+}
+
 .header {
   height: 540px;
   width: 80%;
@@ -23,8 +27,13 @@
 
 
 @media (max-width: $sm) {
+  .container {
+    padding-top: 0;
+  }
+
   .content {
-    top: -50px;
+    padding-top: $spacingLarge;
+    top: auto;
   }
 
   .title {

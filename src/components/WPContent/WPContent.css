@@ -40,11 +40,36 @@
   }
 }
 
-
 @media (max-width: $sm) {
   .container {
     p {
       width: auto;
+    }
+  }
+}
+
+:global {
+  .embedContainer {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: $spacingLarge;
+
+    p {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      eft: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 }
