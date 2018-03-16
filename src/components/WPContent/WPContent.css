@@ -40,6 +40,18 @@
   }
 }
 
+.work {
+  img {
+    margin-bottom: $spacingHuge;
+  }
+  
+  p {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: $spacingHuge;
+  }
+}
+
 @media (max-width: $sm) {
   .container {
     p {

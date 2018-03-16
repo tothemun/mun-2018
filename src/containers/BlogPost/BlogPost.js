@@ -27,7 +27,9 @@ class BlogPost extends Component {
 
     return (
       <div className={styles.container}>
-        <Header src={post._embedded['wp:featuredmedia'][0].source_url} />
+        <div className={styles.header}>
+          <Header src={post._embedded['wp:featuredmedia'][0].source_url} />
+        </div>
         <Container className={styles.content}>
           <Row>
             <Col xs={12}>

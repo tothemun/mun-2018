@@ -4,19 +4,16 @@
 
 .header {
   height: 540px;
-  width: 80%;
-  margin: 0 auto;
+  margin: 0 auto $spacingLarge auto;
 }
 
 .content {
   position: relative;
-  top: -150px;
-  left: -10px;
 }
 
 .title {
+  text-align: center;
   text-transform: uppercase;
-  text-shadow: 3px 4px 0 #fff;
 }
 
 .block {
@@ -27,6 +24,10 @@
 
 
 @media (max-width: $sm) {
+  .header {
+    height: 150px;
+  }
+
   .container {
     padding-top: 0;
   }

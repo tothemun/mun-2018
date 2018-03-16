@@ -29,6 +29,10 @@
     padding-top: 0;
   }
 
+  .header {
+    height: 150px;
+  }
+
   .content {
     padding-top: $spacingLarge;
     top: auto;
