@@ -28,27 +28,18 @@ class WorkPage extends Component {
 
     return (
       <div className={styles.container}>
-        <Header src={page._embedded['wp:featuredmedia'][0].source_url} />
+        <div className={styles.header}>
+          <Header src={page._embedded['wp:featuredmedia'][0].source_url} />
+        </div>
         <Container className={styles.content}>
           <Row>
             <Col xs={12}>
               <h1 className={styles.title}>{page.title.rendered}</h1>
             </Col>
           </Row>
-          <Row className={baseStyles.mb3}>
-            <Col xs={4} md={2}>
-              <span className={cn(styles.block, baseStyles.patternHash)} />
-            </Col>
-            <Col xs={8} md={10}>
-              <Authors authors={page._embedded.author} textClass={baseStyles.faded} />
-            </Col>
-            <Col xs={12}>
-              <hr className={baseStyles.mt0}/>
-            </Col>
-          </Row>
           <Row>
             <Col xs={12}>
-              <WPContent content={page.content.rendered} />
+              <WPContent content={page.content.rendered} type='work'/>
             </Col>
           </Row>
         </Container>
