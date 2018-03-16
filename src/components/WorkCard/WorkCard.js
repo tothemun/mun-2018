@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import React from 'react';
-import { Button, ProgressiveImage, WPContent } from '_components';
+import { Button, ProgressiveImage } from '_components';
+import baseStyles from '_styles/index.css';
 import styles from './WorkCard.css';
 
 const WorkCard = ({ loaded, iteration, page }) => (
@@ -9,9 +10,9 @@ const WorkCard = ({ loaded, iteration, page }) => (
     <div className={cn(styles.details, {[styles.left]: iteration % 2})}>
       <div className={styles.snippet}>
         <p className={styles.title}>{page.title.rendered}</p>
-        <WPContent content={page.excerpt.rendered} />
+        <h5 className={baseStyles.mb0}>{page.excerpt.rendered}</h5>
       </div>
-      <Button to={`/page/${page.id}`} additionalStyles={['block']} label='View' />
+      <Button to={`/page/${page.id}`} label='View' />
     </div>
   </div>
 );
