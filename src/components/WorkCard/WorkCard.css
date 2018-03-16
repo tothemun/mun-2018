@@ -1,6 +1,7 @@
 .container {
   display: none;
   margin-bottom: 140px;
+  position: relative;
   cursor: pointer;
 }
 
