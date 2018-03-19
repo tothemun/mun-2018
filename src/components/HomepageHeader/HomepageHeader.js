@@ -1,66 +1,97 @@
+import cn from 'classnames';
 import React, { Component } from 'react';
 import React3 from 'react-three-renderer';
 import * as THREE from 'three';
+import { ProgressiveImage } from '_components';
+import styles from './HomepageHeader.css';
+import HeaderImg from './header-img.jpg';
+import Headline from './headline.svg';
 
 class HomepageHeader extends Component {
-  constructor(props, context) {
-    super(props, context);
-
-    // construct the position vector here, because if we use 'new' within render,
-    // React will think that things have changed when they have not.
+  componentDidMount() {
     this.cameraPosition = new THREE.Vector3(0, 0, 5);
   }
 
-  onAnimate = () => {
+  onMouseMove = (e) => {
+    const { oldMouseX, oldMouseY } = this.state;
+
     this.setState({
-      cubeRotation: new THREE.Euler(
-        this.state.cubeRotation.x + 0.1,
-        this.state.cubeRotation.y + 0.1,
+      difMouseX: e.screenX - oldMouseX,
+      difMouseY: e.screenY - oldMouseY,
+      oldMouseX: e.screenX,
+      oldMouseY: e.screenY
+    });
+  }
+
+  onAnimate = () => {
+    const { difMouseX, difMouseY } = this.state;
+    const mouseMod = 1000;
+
+    this.setState({
+      sphereRotation: new THREE.Euler(
+        this.state.sphereRotation.x + 0.01 + difMouseY / mouseMod,
+        this.state.sphereRotation.y + 0.01 + difMouseX / mouseMod,
         0
       ),
     });
   };
 
-
   render() {
     const width = window.innerWidth; // canvas width
     const height = window.innerHeight; // canvas height
-
-    return (<React3
-      mainCamera="camera" // this points to the perspectiveCamera which has the name set to "camera" below
-      width={width}
-      height={height}
-
-      onAnimate={this.onAnimate}
-    >
-      <scene>
-        <perspectiveCamera
-          name="camera"
-          fov={75}
-          aspect={width / height}
-          near={0.1}
-          far={1000}
-
-          position={this.cameraPosition}
-        />
-        <mesh
-          rotation={this.state.cubeRotation}
+    const { display } = this.props;
+    return (
+      <div className={styles.header} onMouseMove={this.onMouseMove}>
+        <div
+          className={cn(styles.animation, {[styles.display]: display})}
+          ref={ (el) => this.$animationContainer = el}
         >
-          <boxGeometry
-            width={1}
-            height={1}
-            depth={1}
-          />
-          <meshBasicMaterial
-            color={0x00ff00}
-          />
-        </mesh>
-      </scene>
-    </React3>);
+          <span className={styles.left}></span>
+          <span className={styles.top}></span>
+          <span className={styles.right}></span>
+          <span className={styles.bottom}></span>
+          <ProgressiveImage src={HeaderImg} alt='Header' />
+          <React3
+            alpha={true}
+            mainCamera="camera"
+            width={width}
+            height={height}
+            onAnimate={this.onAnimate}
+            clearAlpha={0}
+          >
+            <scene>
+              <perspectiveCamera
+                name="camera"
+                fov={75}
+                aspect={width / height}
+                near={0.1}
+                far={1000}
+                position={this.cameraPosition}
+              />
+              <mesh rotation={this.state.sphereRotation} >
+                <icosahedronGeometry
+                  radius={1}
+                  detail={1}
+                />
+                <meshBasicMaterial
+                  color={0xAAAAAAA}
+                  wireframe={true}
+                />
+              </mesh>
+            </scene>
+          </React3>
+          <object data={Headline} alt='Make It Matter' aria-label='Make It Matter' className={styles.headline}/>
+        </div>
+      </div>
+    );
   }
 
   state = {
-    cubeRotation: new THREE.Euler(),
+    oldMouseX: 0,
+    oldMouseY: 0,
+    difMouseX: 0,
+    difMouseY: 0,
+    sphereRotation: new THREE.Euler(),
   };
 }
 
