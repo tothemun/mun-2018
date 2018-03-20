@@ -12,7 +12,7 @@ class BorderHighlight extends Component {
   componentWillMount() {
     this.direction = 1;
   }
-  
+
   componentDidMount() {
     const { $scene, $container } = this;
     this.clock = new THREE.Clock();
@@ -98,6 +98,7 @@ class BorderHighlight extends Component {
       >
         <React3
           antialias={true}
+          pixelRatio={window.devicePixelRatio || 1}
           clearColor={0xDDDDDD}
           mainCamera="camera2"
           width={width}

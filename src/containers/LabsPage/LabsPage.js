@@ -9,8 +9,9 @@ class LabsPage extends Component {
     return (
       <Container className={styles.container}>
         <Row>
-          <Col xs={12}>
-            <h1 className={baseStyles.mb4}>Labs</h1>
+          <Col xs={12} className={baseStyles.mb4}>
+            <h1>Labs</h1>
+            <p>Experients in code</p>
           </Col>
         </Row>
         <Row>

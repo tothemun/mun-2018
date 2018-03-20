@@ -26,8 +26,8 @@ class WaterShader extends Component {
 
     this.cameraPosition = new THREE.Vector3(0, 0, 5);
 
-    this.timeUniform.iResolution.value.x = width;
-    this.timeUniform.iResolution.value.y = height;
+    this.timeUniform.iResolution.value.x = 100;
+    this.timeUniform.iResolution.value.y = 1000;
 
     this.setState({
       height,
@@ -48,6 +48,7 @@ class WaterShader extends Component {
         ref={(input) => { this.$container = input; }}
       >
         <React3
+          pixelRatio={window.devicePixelRatio || 1}
           antialias={true}
           mainCamera="camera"
           width={width}
