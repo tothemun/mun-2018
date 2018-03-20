@@ -2,7 +2,7 @@ import cn from 'classnames';
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import PropTypes from 'prop-types';
-import { TimelineMax, TweenLite, Power4 } from 'gsap';
+import { TweenLite } from 'gsap';
 import styles from './Button.css';
 import Loader from './Loader/Loader';
 

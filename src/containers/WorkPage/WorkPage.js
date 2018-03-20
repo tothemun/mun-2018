@@ -1,10 +1,8 @@
-import cn from 'classnames';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Col, Container, Row } from 'react-grid-system';
 import { clearActivePage, fetchPage } from '_actions/pageActions';
-import { Authors, Header, WPContent } from '_components';
-import baseStyles from '_styles/index.css';
+import { Header, WPContent } from '_components';
 import styles from './WorkPage.css';
 
 class WorkPage extends Component {
