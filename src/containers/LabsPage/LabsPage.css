@@ -2,6 +2,10 @@
   padding-top: $spacingLarge;
 }
 
+.itemWrapper {
+  margin-bottom: $spacingLarge;
+}
+
 .item {
   height: 400px;
 }

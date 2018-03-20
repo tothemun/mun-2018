@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Container, Row } from 'react-grid-system';
-import { BorderHighlight, WaterShader } from '_components/Labs';
+import { BorderHighlight, Ellipse, WaterShader } from '_components/Labs';
 import baseStyles from '_styles/index.css';
 import styles from './LabsPage.css';
 
@@ -15,13 +15,23 @@ class LabsPage extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} md={6} className={styles.item}>
-            <BorderHighlight />
+          <Col xs={12} md={6} className={styles.itemWrapper}>
+            <div className={styles.item}>
+              <BorderHighlight />
+            </div>
             <h5>Edge Highlight in Three.js</h5>
           </Col>
-          <Col xs={12} md={6} className={styles.item}>
-            <WaterShader />
+          <Col xs={12} md={6} className={styles.itemWrapper}>
+            <div className={styles.item}>
+              <WaterShader />
+            </div>
             <h5>Three.js GLSL Water</h5>
+          </Col>
+          <Col xs={12} md={6} className={styles.itemWrapper}>
+            <div className={styles.item}>
+              <Ellipse />
+            </div>
+            <h5>Three.js Top</h5>
           </Col>
         </Row>
       </Container>

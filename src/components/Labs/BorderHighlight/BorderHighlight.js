@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as THREE from 'three';
 import React3 from 'react-three-renderer';
 import { ease } from 'mun-three-utils'
-import { ThreeCanvas } from '_components';
 import { setUpBarycentricCoordinates } from '_utils';
 import styles from './BorderHighlight.css';
 import vert from './edge.vert';
