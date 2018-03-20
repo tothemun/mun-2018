@@ -33,6 +33,7 @@ class HomepageHeader extends Component {
           <React3
             alpha={true}
             antialias={true}
+            pixelRatio={window.devicePixelRatio || 1}
             mainCamera="camera"
             width={width}
             height={height}
