@@ -48,6 +48,7 @@ class WaterShader extends Component {
         ref={(input) => { this.$container = input; }}
       >
         <React3
+          antialias={true}
           mainCamera="camera"
           width={width}
           height={height}
@@ -73,16 +74,6 @@ class WaterShader extends Component {
               height={height}
               widthSegments={40}
               heightSegments={40}
-            />
-          </mesh>
-          <mesh>
-            <meshBasicMaterial
-              color={0xffff00}
-            />
-            <sphereGeometry
-              radius={10}
-              widthSegments={32}
-              heightSegments={32}
             />
           </mesh>
           </scene>

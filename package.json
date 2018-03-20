@@ -10,6 +10,7 @@
     "lodash": "^4.17.4",
     "memorystorage": "^0.11.0",
     "moment": "^2.19.3",
+    "mun-three-utils": "^1.0.3",
     "normalizr": "^3.2.2",
     "prop-types": "^15.5.10",
     "qs": "^6.5.1",
