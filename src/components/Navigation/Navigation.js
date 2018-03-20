@@ -25,6 +25,11 @@ class Navigation extends Component {
                     Writing
                   </Link>
                 </li>
+                <li>
+                  <Link to='/labs' activeClassName={styles.active}>
+                    Labs
+                  </Link>
+                </li>
               </ul>
             </Col>
           </Row>
