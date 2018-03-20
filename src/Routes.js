@@ -6,6 +6,7 @@ import {
   BlogRoll,
   BlogPost,
   Homepage,
+  LabsPage,
   WorkPage
 } from './containers';
 import { history } from './stores';
@@ -19,6 +20,7 @@ class Routes extends Component {
           <Route path='/posts' component={BlogRoll} />
           <Route path='/post/:id' component={BlogPost} />
           <Route path='/page/:id' component={WorkPage} />
+          <Route path='/labs' component={LabsPage} />
         </Route>
       </Router>
     );

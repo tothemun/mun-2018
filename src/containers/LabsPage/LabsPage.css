@@ -1,0 +1,7 @@
+.container {
+  padding-top: $spacingLarge;
+}
+
+.item {
+  height: 400px;
+}
