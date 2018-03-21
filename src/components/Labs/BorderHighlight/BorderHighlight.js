@@ -54,7 +54,7 @@ class BorderHighlight extends Component {
     geometry.computeVertexNormals();
     setUpBarycentricCoordinates(geometry);
 
-    var material = new THREE.ShaderMaterial({
+    const material = new THREE.ShaderMaterial({
       vertexShader: vert,
       fragmentShader: frag,
       extensions: { derivatives: true }
