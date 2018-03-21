@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
 import React3 from 'react-three-renderer';
-import styles from './Rings.css';
+import { withRenderer } from '_components';
 
 class Rings extends Component {
   componentDidMount() {
     const { $container } = this;
     this.clock = new THREE.Clock();
 
-    const height = $container.clientHeight;
-    const width = $container.clientWidth;
-
     this.cameraPosition = new THREE.Vector3(10, 10, 10);
-
-    this.setState({
-      height,
-      width
-    });
 
     for(let i = 0; i < 10; i++) {
       this.$rings.add(this.createRing(i));
@@ -52,44 +44,34 @@ class Rings extends Component {
   }
 
   render() {
-    const { height, width } = this.state;
+    const { height, width } = this.props;
 
     return (
-      <div
-        className={styles.wrapper}
-        ref={(el) => { this.$container = el; }}
+      <React3
+        antialias={true}
+        pixelRatio={window.devicePixelRatio || 1}
+        clearColor={0x333333}
+        mainCamera="camera"
+        width={width}
+        height={height}
+        onAnimate={this.onAnimate}
       >
-        <React3
-          antialias={true}
-          pixelRatio={window.devicePixelRatio || 1}
-          clearColor={0x333333}
-          mainCamera="camera"
-          width={width}
-          height={height}
-          onAnimate={this.onAnimate}
-        >
-          <scene ref={(el) => { this.$scene = el; }}>
-            <perspectiveCamera
-              name="camera"
-              fov={75}
-              aspect={width / height}
-              near={0.1}
-              far={1000}
-              position={this.cameraPosition}
-              lookAt={new THREE.Vector3(0, 0, 0)}
-            />
-            <group ref={(el) => { this.$rings = el; }}>
-            </group>
-          </scene>
-        </React3>
-      </div>
+        <scene ref={(el) => { this.$scene = el; }}>
+          <perspectiveCamera
+            name="camera"
+            fov={75}
+            aspect={width / height}
+            near={0.1}
+            far={1000}
+            position={this.cameraPosition}
+            lookAt={new THREE.Vector3(0, 0, 0)}
+          />
+          <group ref={(el) => { this.$rings = el; }}>
+          </group>
+        </scene>
+      </React3>
     );
   }
-
-  state = {
-    width: 100,
-    height: 100,
-  };
 }
 
-export default Rings;
+export default withRenderer(Rings);
