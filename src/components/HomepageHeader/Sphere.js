@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
-import setUpBarycentricCoordinates from '_utils/setUpBarycentricCoordinates';
 
 class Sphere extends Component {
   onAnimate = () => {

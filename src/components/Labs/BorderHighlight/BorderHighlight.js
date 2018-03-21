@@ -1,4 +1,3 @@
-import { clone } from 'lodash';
 import React, { Component } from 'react';
 import * as THREE from 'three';
 import React3 from 'react-three-renderer';
@@ -31,7 +30,7 @@ class BorderHighlight extends Component {
     this.logo.map((mesh, key) => {
       const distance = 5;
       mesh.geometry.translate(0, this.getMod(key) * distance, 0);
-      $scene.add(mesh)
+      return $scene.add(mesh);
     });
 
     this.setState({
@@ -69,7 +68,6 @@ class BorderHighlight extends Component {
   }
 
   oscillateMesh(mesh, index) {
-    const rotationMod = 1000;
     const time = this.clock.getElapsedTime();
     const {
       distance,

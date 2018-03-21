@@ -19,7 +19,7 @@ class LabsPage extends Component {
         </Row>
         <LabCard
           title='Edge Highlight'
-          description='Shader for edge highlighting. Uses barcentric coordinates to determine edges, and uses the fragment shader to change those colors.'
+          description='Shader for edge highlighting. Uses barycentric coordinates to determine edges, and uses the fragment shader to change those colors.'
           sourceLink='https://github.com/tothemun/mun-2018/tree/master/src/components/Labs/BorderHighlight'
         >
           <BorderHighlight />
