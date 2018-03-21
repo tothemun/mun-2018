@@ -1,3 +1,4 @@
+import { clone } from 'lodash';
 import React, { Component } from 'react';
 import * as THREE from 'three';
 import React3 from 'react-three-renderer';
@@ -28,7 +29,7 @@ class BorderHighlight extends Component {
     ];
 
     this.logo.map((mesh, key) => {
-      const distance = 10;
+      const distance = 5;
       mesh.geometry.translate(0, this.getMod(key) * distance, 0);
       $scene.add(mesh)
     });
@@ -76,12 +77,13 @@ class BorderHighlight extends Component {
     } = this.state;
 
     if(time > duration) {
+      // Flip the animation and reset the clock.
       this.clock.start();
       this.direction *= -1;
     }
 
     const translateValue = distance / (60 * duration) * this.direction * this.getMod(index);
-    const translateY = ease.outQuart(time, 0, translateValue, duration);
+    const translateY = ease.outCubic(time, 0, translateValue, duration);
     mesh.geometry.translate(0, translateY, 0);
   }
 
@@ -124,7 +126,7 @@ class BorderHighlight extends Component {
 
   state = {
     duration: 2,
-    distance: 3,
+    distance: 5,
     height: 100,
     width: 100
   }

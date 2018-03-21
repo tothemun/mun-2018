@@ -20,11 +20,11 @@ class NewsletterSignup extends Component {
 
   render() {
     const { copyOption } = this.state;
-    const { handleSubmit, submitting, submitSucceeded, subscribeEmail } = this.props;
+    const { className, handleSubmit, submitting, submitSucceeded } = this.props;
     const { items } = copy;
 
     return (
-      <div className={styles.wrapper}>
+      <div className={cn(styles.wrapper, className)}>
         <h4>{items[copyOption].headline}</h4>
         <p className={baseStyles.mb4}>{items[copyOption].body}</p>
         <form onSubmit={handleSubmit(this.submit)} className={cn({[baseStyles.mb1]: submitSucceeded})}>
@@ -55,11 +55,11 @@ class NewsletterSignup extends Component {
   };
 };
 
-const mapStateToProps = (state) => ({
-  submitting: state.form.emailSignup.submitting,
-  submitSucceeded: state.form.emailSignup.submitSucceeded
-})
-
-export default connect(null, { subscribeEmail })(reduxForm({
+NewsletterSignup = reduxForm({
   form: 'emailSignup'
-})(NewsletterSignup));
+})(NewsletterSignup);
+
+export default connect(
+  null,
+  { subscribeEmail }
+)(NewsletterSignup);

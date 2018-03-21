@@ -1,9 +1,9 @@
 import BorderHighlight from './BorderHighlight';
-import Ellipse from './Ellipse';
+import Rings from './Rings';
 import WaterShader from './WaterShader';
 
 export {
   BorderHighlight,
-  Ellipse,
+  Rings,
   WaterShader
 };

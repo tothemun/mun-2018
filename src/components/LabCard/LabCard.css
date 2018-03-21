@@ -1,0 +1,11 @@
+.container {
+  margin-bottom: $spacingHuge;
+}
+
+.renderer {
+  height: 400px;
+}
+
+.link {
+  color: $textColor;
+}

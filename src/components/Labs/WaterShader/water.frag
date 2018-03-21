@@ -5,7 +5,6 @@ const int NUM_STEPS = 8;
 const float PI = 3.1415;
 const float EPSILON	= 1e-3;
 
-// sea variables
 const int ITER_GEOMETRY = 3;
 const int ITER_FRAGMENT = 5;
 const float SEA_HEIGHT = 0.6;
@@ -35,12 +34,12 @@ mat3 fromEuler(vec3 ang) {
   return m;
 }
 
-float hash( vec2 p ) {
+float hash(vec2 p) {
   float h = dot(p,vec2(127.1,311.7));
   return fract(sin(h)*43758.5453123);
 }
 
-float noise( in vec2 p ) {
+float noise(in vec2 p) {
   vec2 i = floor(p);
   vec2 f = fract(p);
   vec2 u = f * f * (3.0 - 2.0 * f);
@@ -74,7 +73,7 @@ vec3 getSkyColor(vec3 e) {
   return ret;
 }
 
-float sea_octave(vec2 uv, float choppy) {
+float seaOctave(vec2 uv, float choppy) {
   uv += noise(uv);
   vec2 wv = 1.0 - abs(sin(uv));
   vec2 swv = abs(cos(uv));
@@ -93,9 +92,9 @@ float map(vec3 p) {
   uv.x *= 0.75;
 
   float d, h = 0.0;
-  for(int i = 0; i < ITER_GEOMETRY; i++) {
-    d = sea_octave((uv + seaTime) * freq, choppy);
-    d += sea_octave((uv - seaTime) * freq, choppy);
+  for (int i = 0; i < ITER_GEOMETRY; i++) {
+    d = seaOctave((uv + seaTime) * freq, choppy);
+    d += seaOctave((uv - seaTime) * freq, choppy);
     h += d * amp;
     uv *= octave_m;
     freq *= 1.9;
@@ -116,9 +115,9 @@ float map_detailed(vec3 p) {
   uv.x *= 0.75;
 
   float d, h = 0.0;
-  for(int i = 0; i < ITER_FRAGMENT; i++) {
-    d = sea_octave((uv+seaTime) * freq, choppy);
-    d += sea_octave((uv-seaTime) * freq, choppy);
+  for (int i = 0; i < ITER_FRAGMENT; i++) {
+    d = seaOctave((uv+seaTime) * freq, choppy);
+    d += seaOctave((uv-seaTime) * freq, choppy);
     h += d * amp;
     uv *= octave_m;
     freq *= 1.9;
@@ -128,13 +127,7 @@ float map_detailed(vec3 p) {
   return p.y - h;
 }
 
-vec3 getSeaColor(
- vec3 p,
- vec3 n,
- vec3 l,
- vec3 eye,
- vec3 dist
-) {
+vec3 getSeaColor(vec3 p, vec3 n, vec3 l, vec3 eye, vec3 dist) {
  float fresnel = 1.0 - max(dot(n,-eye),0.0);
  fresnel = pow(fresnel,3.0) * 0.65;
 
@@ -145,70 +138,67 @@ vec3 getSeaColor(
 
  float atten = max(1.0 - dot(dist,dist) * 0.001, 0.0);
  color += SEA_WATER_COLOR * (p.y - SEA_HEIGHT) * 0.18 * atten;
-
  color += vec3(specular(n,l,eye,60.0));
 
  return color;
 }
 
-// tracing
 vec3 getNormal(vec3 p, float eps) {
- vec3 n;
- n.y = map_detailed(p);
- n.x = map_detailed(vec3(p.x+eps,p.y,p.z)) - n.y;
- n.z = map_detailed(vec3(p.x,p.y,p.z+eps)) - n.y;
- n.y = eps;
- return normalize(n);
+  vec3 n;
+  n.y = map_detailed(p);
+  n.x = map_detailed(vec3(p.x+eps,p.y,p.z)) - n.y;
+  n.z = map_detailed(vec3(p.x,p.y,p.z+eps)) - n.y;
+  n.y = eps;
+
+  return normalize(n);
 }
 
 float heightMapTracing(vec3 ori, vec3 dir, out vec3 p) {
- float tm = 0.0;
- float tx = 1000.0;
- float hx = map(ori + dir * tx);
+  float tm = 0.0;
+  float tx = 1000.0;
+  float hx = map(ori + dir * tx);
 
- if(hx > 0.0) {
-   return tx;
- }
+  if (hx > 0.0) {
+    return tx;
+  }
 
- float hm = map(ori + dir * tm);
- float tmid = 0.0;
- for(int i = 0; i < NUM_STEPS; i++) {
-   tmid = mix(tm,tx, hm/(hm-hx));
-   p = ori + dir * tmid;
-   float hmid = map(p);
-   if(hmid < 0.0) {
-     tx = tmid;
-     hx = hmid;
-   } else {
-     tm = tmid;
-     hm = hmid;
+  float hm = map(ori + dir * tm);
+  float tmid = 0.0;
+  for (int i = 0; i < NUM_STEPS; i++) {
+    tmid = mix(tm,tx, hm/(hm-hx));
+    p = ori + dir * tmid;
+    float hmid = map(p);
+
+    if (hmid < 0.0) {
+      tx = tmid;
+      hx = hmid;
+    } else {
+      tm = tmid;
+      hm = hmid;
     }
- }
- return tmid;
+  }
+  return tmid;
 }
 
 void main() {
+  float time = iGlobalTime * 0.3;
   float EPSILON_NRM	= 0.1 / iResolution.x;
   vec2 uv = gl_FragCoord.xy / iResolution.xy;
   uv = uv * 2.0 - 1.0;
   uv.x *= iResolution.x / iResolution.y;
-  float time = iGlobalTime * 0.3;
 
-  // ray
   vec3 ang = vec3(sin(time*3.0)*0.1,sin(time)*0.2+0.3,time);
   vec3 ori = vec3(0.0,3.5,time*5.0);
   vec3 dir = normalize(vec3(uv.xy,-2.0));
   dir.z += length(uv) * 0.15;
   dir = normalize(dir);
 
-  // tracing
   vec3 p;
   heightMapTracing(ori,dir,p);
   vec3 dist = p - ori;
   vec3 n = getNormal(p, dot(dist,dist) * EPSILON_NRM);
   vec3 light = normalize(vec3(0.0,1.0,0.8));
 
-  // color
   vec3 color = mix(
     getSkyColor(dir),
     getSeaColor(p,n,light,dir,dist),
