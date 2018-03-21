@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import * as THREE from 'three';
 import React3 from 'react-three-renderer';
 import { ease } from 'mun-three-utils'
+import { withRenderer } from '_components';
 import { setUpBarycentricCoordinates } from '_utils';
-import styles from './BorderHighlight.css';
 import vert from './edge.vert';
 import frag from './edge.frag';
 
@@ -15,9 +15,6 @@ class BorderHighlight extends Component {
   componentDidMount() {
     const { $scene, $container } = this;
     this.clock = new THREE.Clock();
-
-    const height = $container.clientHeight;
-    const width = $container.clientWidth;
 
     this.cameraPosition = new THREE.Vector3(20, 20, 20);
 
@@ -31,11 +28,6 @@ class BorderHighlight extends Component {
       const distance = 5;
       mesh.geometry.translate(0, this.getMod(key) * distance, 0);
       return $scene.add(mesh);
-    });
-
-    this.setState({
-      height,
-      width
     });
   }
 
@@ -86,48 +78,41 @@ class BorderHighlight extends Component {
   }
 
   render() {
-    const { height, width } = this.state;
+    const { height, width } = this.props;
     const aspect = width / height;
     const d = 20;
 
     return (
-      <div
-        className={styles.wrapper}
-        ref={(el) => { this.$container = el; }}
+      <React3
+        antialias={true}
+        pixelRatio={window.devicePixelRatio || 1}
+        clearColor={0xDDDDDD}
+        mainCamera="camera2"
+        width={width}
+        height={height}
+        onAnimate={this.onAnimate}
       >
-        <React3
-          antialias={true}
-          pixelRatio={window.devicePixelRatio || 1}
-          clearColor={0xDDDDDD}
-          mainCamera="camera2"
-          width={width}
-          height={height}
-          onAnimate={this.onAnimate}
-        >
-          <scene ref={(el) => { this.$scene = el; }}>
-            <orthographicCamera
-              name="camera2"
-              left={-d * aspect}
-              right={d * aspect}
-              top={d}
-              bottom={-d}
-              near={0.1}
-              far={1000}
-              position={this.cameraPosition}
-              lookAt={new THREE.Vector3(0,0,0)}
-            />
-          </scene>
-        </React3>
-      </div>
+        <scene ref={(el) => { this.$scene = el; }}>
+          <orthographicCamera
+            name="camera2"
+            left={-d * aspect}
+            right={d * aspect}
+            top={d}
+            bottom={-d}
+            near={0.1}
+            far={1000}
+            position={this.cameraPosition}
+            lookAt={new THREE.Vector3(0,0,0)}
+          />
+        </scene>
+      </React3>
     );
   }
 
   state = {
     duration: 2,
-    distance: 5,
-    height: 100,
-    width: 100
+    distance: 5
   }
 }
 
-export default BorderHighlight;
+export default withRenderer(BorderHighlight);

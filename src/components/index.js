@@ -13,6 +13,7 @@ import NewsletterSignup from './NewsletterSignup/NewsletterSignup';
 import PaginationButtons from './PaginationButtons/PaginationButtons';
 import ProgressiveImage from './ProgressiveImage/ProgressiveImage';
 import WithAnalytics from './WithAnalytics';
+import withRenderer from './WithRenderer';
 import WorkCard from './WorkCard/WorkCard';
 import WPContent from './WPContent/WPContent';
 
@@ -32,6 +33,7 @@ export {
   PaginationButtons,
   ProgressiveImage,
   WithAnalytics,
+  withRenderer,
   WorkCard,
   WPContent
 };
