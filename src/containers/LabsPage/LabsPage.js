@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Container, Row } from 'react-grid-system';
-import { BorderHighlight, Ellipse, WaterShader } from '_components/Labs';
+import { LabCard, NewsletterSignup } from '_components';
+import { BorderHighlight, Rings, WaterShader } from '_components/Labs';
 import baseStyles from '_styles/index.css';
 import styles from './LabsPage.css';
 
@@ -8,30 +9,38 @@ class LabsPage extends Component {
   render() {
     return (
       <Container className={styles.container}>
-        <Row>
-          <Col xs={12} className={baseStyles.mb4}>
+        <Row className={baseStyles.mb4}>
+          <Col xs={12}>
             <h1>Labs</h1>
-            <p>Experients in code</p>
+            <p className={baseStyles.mb0}>100% Code.</p>
+            <p className={baseStyles.mb0}>No images or videos.</p>
+            <p>Rendered in real time.</p>
           </Col>
         </Row>
+        <LabCard
+          title='Edge Highlight'
+          description='Shader for edge highlighting. Uses barcentric coordinates to determine edges, and uses the fragment shader to change those colors.'
+          sourceLink='https://github.com/tothemun/mun-2018/tree/master/src/components/Labs/BorderHighlight'
+        >
+          <BorderHighlight />
+        </LabCard>
+        <LabCard
+          title='Water Shader'
+          description='Realistic water generated entirely through the fragment shader. Generates waves and ripples using noise generators.'
+          sourceLink='https://github.com/tothemun/mun-2018/tree/master/src/components/Labs/WaterShader'
+        >
+          <WaterShader />
+        </LabCard>
+        <LabCard
+          title='Oscillating Rings'
+          description='Series of rings animated with Sine and Cosine functions in chase.'
+          sourceLink='https://github.com/tothemun/mun-2018/tree/master/src/components/Labs/Rings'
+        >
+          <Rings />
+        </LabCard>
         <Row>
-          <Col xs={12} md={6} className={styles.itemWrapper}>
-            <div className={styles.item}>
-              <BorderHighlight />
-            </div>
-            <h5>Edge Highlight in Three.js</h5>
-          </Col>
-          <Col xs={12} md={6} className={styles.itemWrapper}>
-            <div className={styles.item}>
-              <WaterShader />
-            </div>
-            <h5>Three.js GLSL Water</h5>
-          </Col>
-          <Col xs={12} md={6} className={styles.itemWrapper}>
-            <div className={styles.item}>
-              <Ellipse />
-            </div>
-            <h5>Three.js Top</h5>
+          <Col xs={12}>
+            <NewsletterSignup />
           </Col>
         </Row>
       </Container>

@@ -7,13 +7,14 @@ import HomepageHeader from './HomepageHeader/HomepageHeader';
 import HomepageSection from './HomepageSection/HomepageSection';
 import HoverElement from './HoverElement/HoverElement';
 import Input from './Fields/Input';
+import LabCard from './LabCard';
 import Navigation from './Navigation/Navigation';
+import NewsletterSignup from './NewsletterSignup/NewsletterSignup';
 import PaginationButtons from './PaginationButtons/PaginationButtons';
 import ProgressiveImage from './ProgressiveImage/ProgressiveImage';
 import WithAnalytics from './WithAnalytics';
 import WorkCard from './WorkCard/WorkCard';
 import WPContent from './WPContent/WPContent';
-import NewsletterSignup from './NewsletterSignup/NewsletterSignup';
 
 export {
   Authors,
@@ -25,6 +26,7 @@ export {
   HomepageSection,
   HoverElement,
   Input,
+  LabCard,
   Navigation,
   NewsletterSignup,
   PaginationButtons,
