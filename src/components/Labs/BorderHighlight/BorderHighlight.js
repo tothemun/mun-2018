@@ -13,7 +13,7 @@ class BorderHighlight extends Component {
   }
 
   componentDidMount() {
-    const { $scene, $container } = this;
+    const { $scene } = this;
     this.clock = new THREE.Clock();
 
     this.cameraPosition = new THREE.Vector3(20, 20, 20);

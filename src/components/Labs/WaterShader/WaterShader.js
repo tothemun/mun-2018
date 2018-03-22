@@ -4,7 +4,6 @@ import React3 from 'react-three-renderer';
 import { withRenderer } from '_components';
 import frag from './water.frag';
 import vert from './water.vert';
-import styles from './WaterShader.css';
 
 class WaterShader extends Component {
   componentWillMount() {
