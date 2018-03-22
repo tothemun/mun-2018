@@ -5,7 +5,6 @@ import { withRenderer } from '_components';
 
 class Rings extends Component {
   componentDidMount() {
-    const { $container } = this;
     this.clock = new THREE.Clock();
 
     this.cameraPosition = new THREE.Vector3(10, 10, 10);
@@ -49,12 +48,12 @@ class Rings extends Component {
     return (
       <React3
         antialias={true}
-        pixelRatio={window.devicePixelRatio || 1}
         clearColor={0x333333}
-        mainCamera="camera"
-        width={width}
         height={height}
+        mainCamera="camera"
         onAnimate={this.onAnimate}
+        pixelRatio={window.devicePixelRatio || 1}
+        width={width}
       >
         <scene ref={(el) => { this.$scene = el; }}>
           <perspectiveCamera
