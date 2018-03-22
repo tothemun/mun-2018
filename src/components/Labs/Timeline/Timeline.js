@@ -9,7 +9,7 @@ class Timeline extends Component {
     this.cameraPosition = new THREE.Vector3(500, 500, 500);
 
     const tl = new TimelineMax({ repeat: -1 ,repeatDelay:0.5 });
-		tl.to(this.$box.rotation, 2, {
+    tl.to(this.$box.rotation, 2, {
         x: -Math.PI,
         y: -Math.PI,
         ease: Elastic.easeOut
