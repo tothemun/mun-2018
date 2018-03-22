@@ -42,8 +42,12 @@ class Rings extends Component {
     });
   }
 
+  handleIntersection = () => {
+    console.log('hi');
+  }
+
   render() {
-    const { height, width } = this.props;
+    const { onIntersect, height, width } = this.props;
 
     return (
       <React3

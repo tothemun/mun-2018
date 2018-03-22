@@ -1,4 +1,6 @@
+import Observer from '@researchgate/react-intersection-observer';
 import React from 'react';
+import 'intersection-observer';
 import styles from './WithRenderer.css';
 
 function withRender(WrappedComponent) {
@@ -19,16 +21,27 @@ function withRender(WrappedComponent) {
       });
     };
 
+    handleIntersection = (cb) => {
+      cb();
+    }
+
     render() {
       const { height, width } = this.state;
 
+      const options = {
+        onChange: this.handleIntersection,
+        root: "#root"
+      };
+
       return (
-        <div
-          className={styles.wrapper}
-          ref={(el) => { this.$container = el; }}
-        >
-          <WrappedComponent height={height} width={width} />
-        </div>
+        <Observer {...options}>
+          <div
+            className={styles.wrapper}
+            ref={(el) => { this.$container = el; }}
+          >
+            <WrappedComponent height={height} width={width} onIntersect={this.handleIntersection}/>
+          </div>
+        </Observer>
       );
     }
 
