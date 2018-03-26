@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Container, Row } from 'react-grid-system';
 import { LabCard, NewsletterSignup } from '_components';
-import { BorderHighlight, Timeline, Rings, WaterShader } from '_components/Labs';
+import { BorderHighlight, Eclipse, Timeline, Rings, WaterShader } from '_components/Labs';
 import baseStyles from '_styles/index.css';
 import styles from './LabsPage.css';
 
@@ -17,6 +17,13 @@ class LabsPage extends Component {
             <p>Rendered in real time.</p>
           </Col>
         </Row>
+        <LabCard
+          title='Timeline'
+          description='Demo of chaining 3D animation in a timeline with GSAP.'
+          sourceLink='https://github.com/tothemun/mun-2018/tree/master/src/components/Labs/Timeline'
+        >
+          <Eclipse />
+        </LabCard>
         <LabCard
           title='Timeline'
           description='Demo of chaining 3D animation in a timeline with GSAP.'

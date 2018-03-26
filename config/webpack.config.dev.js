@@ -87,6 +87,7 @@ module.exports = {
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
       '_styles': path.join(__dirname, '../src/styles'),
+      '_graphics': path.join(__dirname, '../src/graphics'),
       '_utils': path.join(__dirname, '../src/utils'),
       '_components': path.join(__dirname, '../src/components'),
       '_containers': path.join(__dirname, '../src/containers'),

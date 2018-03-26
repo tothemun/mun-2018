@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './WithRenderer.css';
 
-function withRender(WrappedComponent) {
+function withRenderer(WrappedComponent) {
   return class extends React.Component {
     componentDidMount() {
       window.addEventListener('resize', this.handleResize);
@@ -39,4 +39,4 @@ function withRender(WrappedComponent) {
   }
 };
 
-export default withRender;
+export default withRenderer;
