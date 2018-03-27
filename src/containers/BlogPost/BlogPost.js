@@ -26,27 +26,29 @@ class BlogPost extends Component {
     }
 
     return (
-      <div className={styles.container}>
+      <div>
         <div className={styles.header}>
-          <Header src={post._embedded['wp:featuredmedia'][0].source_url} />
+          <Header type='blog' src={post._embedded['wp:featuredmedia'][0].source_url} />
+          <Container className={styles.postInfo}>
+            <Row>
+              <Col xs={12}>
+                <h2>{post.title.rendered}</h2>
+              </Col>
+            </Row>
+            <Row className={baseStyles.mb3}>
+              <Col xs={4} md={2}>
+                <span className={cn(styles.block, baseStyles.patternHash)} />
+              </Col>
+              <Col xs={8} md={10}>
+                <Authors authors={post._embedded.author} textClass={baseStyles.faded} />
+              </Col>
+              <Col xs={12}>
+                <hr className={baseStyles.mt0}/>
+              </Col>
+            </Row>
+          </Container>
         </div>
         <Container className={styles.content}>
-          <Row>
-            <Col xs={12}>
-              <h1 className={styles.title}>{post.title.rendered}</h1>
-            </Col>
-          </Row>
-          <Row className={baseStyles.mb3}>
-            <Col xs={4} md={2}>
-              <span className={cn(styles.block, baseStyles.patternHash)} />
-            </Col>
-            <Col xs={8} md={10}>
-              <Authors authors={post._embedded.author} textClass={baseStyles.faded} />
-            </Col>
-            <Col xs={12}>
-              <hr className={baseStyles.mt0}/>
-            </Col>
-          </Row>
           <Row>
             <Col xs={12}>
               <WPContent content={post.content.rendered} className={baseStyles.mb6}/>

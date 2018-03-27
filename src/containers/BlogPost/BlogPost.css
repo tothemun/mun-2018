@@ -1,21 +1,21 @@
-.container {
-  padding-top: $spacingLarge;
-}
-
 .header {
   height: 540px;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
+  margin-bottom: $spacingMedium;
+  max-height: 80vh;
+  position: relative;
 }
 
 .content {
   position: relative;
-  top: -150px;
 }
 
-.title {
+.postInfo {
   text-transform: uppercase;
-  text-shadow: 3px 4px 0 #fff;
+  color: #fff;
+  position: relative;
+  bottom: $spacingMedium;
 }
 
 .block {
