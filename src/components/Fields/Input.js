@@ -12,6 +12,7 @@ class Input extends Component {
       input,
       name,
       placeholder,
+      required,
       type,
       wrappedStatusClass
     } = this.props;
@@ -24,6 +25,7 @@ class Input extends Component {
           className={cn(styles.field, wrappedStatusClass, {[baseStyles.mr1]: children})}
           {...input}
           placeholder={placeholder}
+          required={required}
         />
         {children}
       </div>
