@@ -42,7 +42,14 @@ class Homepage extends Component {
       <div className={baseStyles.pt5}>
         <HomepageHeader display={this.state.loaded}/>
         <Container>
-          <HomepageSection title='Select Work'>
+          <HomepageSection title='We make brands matter.'>
+            <Row>
+              <Col xs={12} md={8} lg={6}>
+                <p className={baseStyles.mb0}>In a sea of noise and ads, our clients stand out against the noise. We create emotional, immersive campaigns for brands that stick in peoples heads.</p>
+              </Col>
+            </Row>
+          </HomepageSection>
+          <HomepageSection title='Matter Made'>
             <Row>
               { pages.map((page, key) => (
                 <Col xs={12} md={8} offset={{ md: key % 2 * 4 }} key={key}>
