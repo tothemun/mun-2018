@@ -6,7 +6,9 @@ import Header from './Header/Header';
 import HomepageHeader from './HomepageHeader/HomepageHeader';
 import HomepageSection from './HomepageSection/HomepageSection';
 import HoverElement from './HoverElement/HoverElement';
+import ContactForm from './ContactForm';
 import Input from './Fields/Input';
+import TextArea from './Fields/TextArea';
 import LabCard from './LabCard';
 import Navigation from './Navigation/Navigation';
 import NewsletterSignup from './NewsletterSignup/NewsletterSignup';
@@ -19,6 +21,7 @@ import WPContent from './WPContent/WPContent';
 
 export {
   Authors,
+  ContactForm,
   BlogPostCard,
   Button,
   Footer,
@@ -32,6 +35,7 @@ export {
   NewsletterSignup,
   PaginationButtons,
   ProgressiveImage,
+  TextArea,
   WithAnalytics,
   withRenderer,
   WorkCard,

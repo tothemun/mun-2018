@@ -6,6 +6,7 @@ import { fetchAllPages } from '_actions/pageActions';
 import { fetchAllPosts } from '_actions/postActions';
 import {
   BlogPostCard,
+  ContactForm,
   HomepageHeader,
   HomepageSection,
   ProgressiveImage,
@@ -81,6 +82,7 @@ class Homepage extends Component {
               />
             ))}
           </HomepageSection>
+          <ContactForm />
         </Container>
       </div>
     );
