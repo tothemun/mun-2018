@@ -1,7 +1,8 @@
-import cn from 'classnames'
-import React, { PropTypes } from 'react'
-import inputGroup from './InputGroup/InputGroup'
-import styles from './Field.css'
+import cn from 'classnames';
+import React from 'react';
+import PropTypes from 'prop-types';
+import inputGroup from './InputGroup/InputGroup';
+import styles from './Field.css';
 
 const TextArea = ({
   name,
