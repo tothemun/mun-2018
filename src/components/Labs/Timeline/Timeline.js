@@ -8,8 +8,8 @@ class Timeline extends Component {
   componentDidMount() {
     this.cameraPosition = new THREE.Vector3(500, 500, 500);
 
-    const tl = new TimelineMax({ repeat: -1 ,repeatDelay:0.5 });
-    tl.to(this.$box.rotation, 2, {
+    this.tl = new TimelineMax({ repeat: -1 ,repeatDelay:0.5 });
+    this.tl.to(this.$box.rotation, 2, {
         x: -Math.PI,
         y: -Math.PI,
         ease: Elastic.easeOut
@@ -32,6 +32,15 @@ class Timeline extends Component {
         z: 0,
         ease: Elastic.easeOut
       }, '=-1.95');
+  }
+
+  onAnimate = () => {
+    const { pauseRender } = this.props;
+    if(pauseRender) {
+      this.tl.pause();
+    } else {
+      this.tl.play();
+    }
   }
 
   render() {

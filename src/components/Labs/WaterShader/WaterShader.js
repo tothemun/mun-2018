@@ -28,6 +28,9 @@ class WaterShader extends Component {
   }
 
   onAnimate = () => {
+    const { pauseRender } = this.props;
+    if(pauseRender) return;
+
     this.timeUniform.iGlobalTime.value += this.clock.getDelta();
   }
 

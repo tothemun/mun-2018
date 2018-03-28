@@ -56,6 +56,9 @@ class BorderHighlight extends Component {
   }
 
   onAnimate = () => {
+    const { pauseRender } = this.props;
+    if(pauseRender) return;
+
     this.logo.map((mesh, index) => this.oscillateMesh(mesh, index));
   }
 

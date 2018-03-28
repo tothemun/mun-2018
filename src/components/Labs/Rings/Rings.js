@@ -29,6 +29,10 @@ class Rings extends Component {
   }
 
   onAnimate = () => {
+    const { pauseRender } = this.props;
+
+    if(pauseRender) return;
+
     const delta = this.clock.getElapsedTime();
 
     this.$rings.children.map((ring, key) => {
