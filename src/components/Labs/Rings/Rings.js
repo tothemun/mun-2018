@@ -29,6 +29,10 @@ class Rings extends Component {
   }
 
   onAnimate = () => {
+    const { pauseRender } = this.props;
+
+    if(pauseRender) return;
+
     const delta = this.clock.getElapsedTime();
 
     this.$rings.children.map((ring, key) => {
@@ -42,12 +46,8 @@ class Rings extends Component {
     });
   }
 
-  handleIntersection = () => {
-    console.log('hi');
-  }
-
   render() {
-    const { onIntersect, height, width } = this.props;
+    const { height, width } = this.props;
 
     return (
       <React3

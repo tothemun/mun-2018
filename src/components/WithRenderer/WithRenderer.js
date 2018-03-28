@@ -21,12 +21,20 @@ function withRender(WrappedComponent) {
       });
     };
 
-    handleIntersection = (cb) => {
-      cb();
+    handleIntersection = (event) => {
+      if(event.isIntersecting) {
+        this.setState({
+          pauseRender: false
+        });
+      } else {
+        this.setState({
+          pauseRender: true
+        });
+      }
     }
 
     render() {
-      const { height, width } = this.state;
+      const { height, pauseRender, width } = this.state;
 
       const options = {
         onChange: this.handleIntersection,
@@ -39,7 +47,7 @@ function withRender(WrappedComponent) {
             className={styles.wrapper}
             ref={(el) => { this.$container = el; }}
           >
-            <WrappedComponent height={height} width={width} onIntersect={this.handleIntersection}/>
+            <WrappedComponent height={height} width={width} pauseRender={pauseRender}/>
           </div>
         </Observer>
       );
@@ -47,6 +55,7 @@ function withRender(WrappedComponent) {
 
     state = {
       height: 100,
+      shouldRender: false,
       width: 100
     };
   }
