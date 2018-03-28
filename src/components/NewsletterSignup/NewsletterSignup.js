@@ -2,7 +2,7 @@ import cn from 'classnames';
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form';
-import { subscribeEmail } from '_actions/mailchimpActions';
+import { subscribeEmail } from '_actions/mailActions';
 import { Button, Input } from '_components';
 import baseStyles from '_styles/index.css';
 import { getRandomInt } from '_utils';
