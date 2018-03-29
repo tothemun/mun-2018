@@ -95,7 +95,7 @@ class HomepageHeader extends Component {
 
     for (let i = 0; i < this.particles.length; i++) {
       const p = this.particles[i];
-      p.flow(this.frameCount);
+      //p.flow(this.frameCount);
 
       if(p.isDead()) {
         this.particles.splice(i, i+1);
