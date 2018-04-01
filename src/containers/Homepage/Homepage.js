@@ -19,8 +19,8 @@ import Keurig from './keurig_logo.svg';
 import SeventhGen from './seventh_gen_logo.svg';
 import Mamava from './mamava_logo.svg';
 import HotelVT from './hotel_vt_logo.svg';
-import Champlain from './champlain_logo.svg';
 import Wildfire from './wildfire_logo.svg';
+import MTV from './mtv_logo.svg';
 
 class Homepage extends Component {
   componentWillMount() {
@@ -54,6 +54,9 @@ class Homepage extends Component {
           <HomepageSection title='Clients'>
             <Row className={clientClass}>
               <Col xs={6} md={4} lg={2}>
+                <ProgressiveImage src={MTV} alt='MTV Logo' style={{height: 50}} fit='contain' className={baseStyles.mb4}/>
+              </Col>
+              <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={Keurig} alt='Client' fit='contain' className={baseStyles.mb4}/>
               </Col>
               <Col xs={6} md={4} lg={2}>
@@ -64,9 +67,6 @@ class Homepage extends Component {
               </Col>
               <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={HotelVT} alt='Client' style={{height: 50}} fit='contain' className={baseStyles.mb4}/>
-              </Col>
-              <Col xs={6} md={4} lg={2}>
-                <ProgressiveImage src={Champlain} alt='Client' fit='contain' className={baseStyles.mb4}/>
               </Col>
               <Col xs={6} md={4} lg={2}>
                 <ProgressiveImage src={Wildfire} alt='Client' fit='contain' className={baseStyles.mb4}/>
