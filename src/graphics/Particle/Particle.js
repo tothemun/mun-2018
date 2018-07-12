@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { getRandomFloat } from '_utils';
 import { PerlinNoise } from '_utils';
-import { map } from '_utils/Math';
+import { map, noise } from '_utils/Math';
 
 const noiseOndulation = 200;
 const noiseVariation = 1000;
@@ -34,7 +34,7 @@ class Particle {
    */
   getNoiseAngle = (_x, _y) => {
     const { frame } = this;
-    const noiseValue = this.perlinNoise.noise(this.getNoiseInput(_x), this.getNoiseInput(_y), this.getNoiseInput(frame));
+    const noiseValue = noise(this.getNoiseInput(_x), this.getNoiseInput(_y), this.getNoiseInput(frame));
     return map(noiseValue, 0, 1, 0, Math.PI * 2);
   }
 
